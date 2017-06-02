@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+         <zsj.com.oyk255.example.ouyiku.view.PullableScrollView
+        android:id="@+id/pullableScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:id="@+id/linear_inpullableScrollView"
+            >
+
+		<RelativeLayout
+                android:id="@+id/RelativeLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" 
+                
+                >
+
+                <zsj.com.oyk255.example.ouyiku.view.CustomViewPager
+                    android:id="@+id/detail_lunbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true" >
+                </zsj.com.oyk255.example.ouyiku.view.CustomViewPager>
+
+                <zsj.com.oyk255.example.ouyiku.view.ViewpageIndicator
+                    android:id="@+id/viewpageIndicator2"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c9c9c9" />
+            </RelativeLayout>
+
+	<TextView
+    android:id="@+id/detai_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:lines="2"
+    android:ellipsize="end"
+    android:textColor="@color/zhutitle"
+    android:textSize="@dimen/goods_title"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+     />
+	
+	<LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content" 
+	     android:layout_marginBottom="6dp"
+	     >
+                
+	      <TextView
+	         android:id="@+id/detail_attr"
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:textColor="@color/fuzhutitle"
+	         android:textSize="@dimen/goods_title"
+	         android:layout_marginLeft="10dp"
+	         android:layout_weight="1"
+	         />
+	    
+                
+	     <TextView
+                        android:id="@+id/detail_daojishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@mipmap/countdown"
+                        android:textColor="@color/theme_color" 
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="16dp"
+                        />
+
+	   
+	 </LinearLayout>
+	
+	
+
+	 <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content" >
+
+	     <TextView
+	         android:id="@+id/detail_newprice"
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:textSize="@dimen/bigtextsize"
+	         android:textColor="#ff0000"
+	         android:layout_marginLeft="10dp"
+	         android:layout_weight="1"
+	         />
+
+	     <TextView
+	         android:id="@+id/detail_sku"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:textSize="@dimen/goods_title"
+	         android:textColor="@color/fuzhutitle"
+	         android:layout_marginRight="10dp"
+	         />
+
+	 </LinearLayout>
+	
+
+	 <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:layout_marginTop="4dp"
+	     android:layout_marginBottom="4dp"
+	      >
+	     
+	      <TextView
+	         android:id="@+id/detail_oldprice"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginLeft="10dp"
+	         android:textSize="@dimen/goods_title"
+	         android:textColor="@color/fuzhutitle"
+	         />
+
+	     <TextView
+	         android:id="@+id/detail_zhekou"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginLeft="10dp"
+	         android:textSize="@dimen/goods_title"
+	         android:textColor="@color/theme_color"
+	         />
+
+	     <TextView
+	         android:id="@+id/detail_baoyou"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="包邮" 
+	         android:textSize="@dimen/goods_title"
+	         android:layout_weight="1"
+	         android:gravity="right"
+	         android:layout_marginRight="10dp"
+	         android:textColor="@color/zhutitle"
+	         />
+
+	 </LinearLayout>
+	 
+	 <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="10dp"
+	     android:background="#eeeeee"
+	     />
+
+	 <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="45dp"
+	     android:orientation="vertical" >
+
+	     <TextView
+	         android:id="@+id/textView1"
+	         android:layout_width="match_parent"
+	         android:layout_height="match_parent"
+	         android:text="图文详情"
+	         android:textSize="@dimen/bigtextsize"
+	         android:textColor="@color/zhutitle"
+	         android:gravity="center"
+	          />
+
+	 </LinearLayout>
+	 <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="0.5dp"
+	     android:background="@color/fuzhuxian"
+	     />
+
+	 
+
+        </LinearLayout>
+    </zsj.com.oyk255.example.ouyiku.view.PullableScrollView>
+    
+    </RelativeLayout>
+    
+    
+
+</LinearLayout>

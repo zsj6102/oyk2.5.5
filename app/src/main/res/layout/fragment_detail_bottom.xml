@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.DetailBottomFragment"
+    android:background="#ffffff"
+     >
+     
+    <zsj.com.oyk255.example.ouyiku.draglayout.CustWebView
+        android:id="@+id/fragment2_webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

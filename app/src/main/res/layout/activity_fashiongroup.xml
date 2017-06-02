@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.Fashion_groupActivity" >
+
+<LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/fashiongroup_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fashiongroup_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="主播"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+    </LinearLayout>
+
+	<zsj.com.oyk255.example.ouyiku.view.GridViewWithHeaderAndFooter
+   		    android:id="@+id/gridview"
+  		    android:layout_width="match_parent"
+  	     	android:layout_height="match_parent"
+		    android:numColumns="2"
+		    android:horizontalSpacing="5dp"
+   		    android:verticalSpacing="5dp"
+		     >
+	</zsj.com.oyk255.example.ouyiku.view.GridViewWithHeaderAndFooter>
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+     android:background="#ffffff"
+    >
+    	<View 
+    	    android:layout_width="match_parent"
+    	    android:layout_height="0.5dp"
+    	    android:background="@color/fuzhuxian"
+    	    />
+
+     <TextView 
+        android:id="@+id/tabs_shopcar"
+       android:background="@null" 
+       android:duplicateParentState="true"
+        android:layout_width="fill_parent"
+         android:layout_height="fill_parent" 
+         android:text="购物车" 
+         android:drawableTop="@drawable/ic_menu_shoppingcar_selector" 
+         style="@style/BottomTab" />
+
+</FrameLayout>

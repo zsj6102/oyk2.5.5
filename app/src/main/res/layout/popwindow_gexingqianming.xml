@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00000000"
+     >
+    <LinearLayout
+        	android:id="@+id/center_pop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="#eeeeee"
+            android:layout_marginTop="120dp"
+            >
+
+            <EditText
+                android:id="@+id/pop_signature_et"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:background="#ffffff"
+                android:ems="10"
+                android:gravity="top|left"
+                android:padding="5dp"
+                android:hint="请输入内容"
+                 />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp" 
+                >
+
+                <TextView
+                    android:id="@+id/pop_send"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="10dp"
+                    android:text="发布" 
+                    android:textSize="@dimen/bigtextsize"
+                     android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/signature_quxiao"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="29dp"
+                    android:layout_toLeftOf="@+id/pop_send"
+                    android:text="取消"
+                    android:gravity="center"
+                    android:textSize="@dimen/bigtextsize" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+</LinearLayout>

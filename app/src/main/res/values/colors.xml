@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background_color">#eeeeee</color>
+    <color name="price_color">#ff647c</color>
+    <color name="oldprice_color">#999999</color>
+    <color name="goodstitle_color">#666666</color>
+    <color name="text_color">#333333</color>
+    <color name="theme_color">#ff647c</color>
+    <color name="title_color">#f8bbd0</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="zhutitle">#666666</color>
+    <color name="futitle">#666666</color>
+    <color name="futitle2">#b4b4b4</color>
+    <color name="fuzhutitle">#999999</color>
+    <color name="fuzhuxian">#c9c9c9</color>
+    <color name="buy_btn">#ff4e4e</color>
+    <color name="second_theme">#ff4e4e</color>
+    <color name="sign">#ef5553</color>
+    <color name="clear">#00000000</color>
+    <color name="block">#60000000</color>
+    <color name="coupon_money">#ffff00</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="light_blue">#6593cb</color>
+
+    <color name="griditems_bg">#ffe8ecef</color>
+    <color name="commo_text_color">#ff333333</color>
+    <color name="line">#ffd3dde6</color>
+
+    <color name="bg_color">#ededed</color>
+    <color name="text_sub_color">#004ab7</color>
+    <color name="bg_sub_color">#fafafa</color>
+    <color name="bg_gray">#DDDEDD</color>
+    <color name="text_press_color">#EB413D</color>
+    <color name="text_gray">#999999</color>
+    <color name="bg_blue">#91DFF0</color>
+    <color name="bg_blue_light">#82CFE2</color>
+    <color name="txt_bg">#357c70</color>
+    <color name="txt_red">#db4b27</color>
+    <color name="txt_blue">#5292E2</color>
+    <color name="item_bg_gray">#EEEEEE</color>
+
+    <drawable name="transparent">#00000000</drawable>
+
+    <!-- wjk UGP color -->
+    <color name="color_red">#FFE70012</color>
+    <color name="color_green">#FF7DBB00</color>
+    <color name="color_gray_1">#FFF8F8F8</color>
+    <color name="color_gray_2">#FFEEEEEE</color>
+    <color name="color_gray_3">#FF666666</color>
+    <color name="color_gray_diver">#E0E0E0</color>
+    <color name="color_blue">#FF5855D6</color>
+    <color name="color_black">#FF000000</color>
+    <color name="color_white">#FFFFFFFF</color>
+    <color name="color_none">#00000000</color>
+    <color name="color_translucence">#33000000</color>
+    <!-- wjk UGP admin color -->
+    <color name="color_blue_admin">#FF1C80E2</color>
+
+    <!-- scan  -->
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+</resources>

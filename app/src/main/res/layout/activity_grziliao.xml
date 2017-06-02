@@ -1,0 +1,402 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/persondata_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.GRziliaoActivity" >
+ 		<LinearLayout
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="@dimen/title_height" 
+ 			    android:background="@color/title_color"
+ 			    android:orientation="vertical"
+ 			    >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <RelativeLayout
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:id="@+id/back_data"
+                         >
+                        
+                         <ImageView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/back" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="个人资料"
+                        android:textColor="#ffffff"
+                        android:textSize="22sp" 
+                        android:gravity="center"
+                        />
+
+                </RelativeLayout>
+                
+ 			</LinearLayout>
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ffffff"
+                 >
+
+                <TextView
+                    android:id="@+id/data_touxiang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="选择头像" 
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+
+                    <zsj.com.oyk255.example.ouyiku.view.CircleImageView
+                        android:id="@+id/data_img"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/logo"
+                         app:border_width="0.5dp"
+            			app:border_color="@color/fuzhuxian"
+                         />
+
+                </RelativeLayout>
+				
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/right_arrow_shezhi"
+                    android:layout_marginRight="10dp" 
+                    android:layout_marginLeft="10dp"
+                    />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:id="@+id/nicheng"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="昵称"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                    android:id="@+id/name_view"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                    <TextView
+                        android:id="@+id/data_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/imageView1"
+                        android:text="隔壁老王"
+                        android:textSize="@dimen/mediumsize"
+                        android:lines="1"
+                        />
+                    
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:id="@+id/phone"
+                android:layout_marginTop="1dp"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="电话"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                    android:id="@+id/phone_view"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                    <TextView
+                        android:id="@+id/data_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/imageView5"
+                        android:text="15805999999"
+                       android:textSize="@dimen/mediumsize" />
+                    
+                </RelativeLayout>
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:id="@+id/sex"
+                android:layout_marginTop="1dp"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                    android:id="@+id/sex_view"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                    <TextView
+                        android:id="@+id/data_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/imageView3"
+                        android:text="男"
+                        android:textSize="@dimen/mediumsize" />
+                    
+                </RelativeLayout>
+
+            </LinearLayout>
+            
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:id="@+id/address"
+                android:layout_marginTop="1dp"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收货地址"
+                   android:textSize="@dimen/mediumsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/address_view"
+                     >
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                    
+                </RelativeLayout>
+
+            </LinearLayout>
+            
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:id="@+id/gexingqianming"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个性签名"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                    android:id="@+id/signature_view"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                    <TextView
+                        android:id="@+id/data_sig"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/imageView7"
+                       android:textSize="@dimen/mediumsize"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:layout_marginLeft="8dp"
+                         />
+                    
+                </RelativeLayout>
+
+            </LinearLayout>
+            
+          <!--   <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:id="@+id/xiugaimima"
+                android:layout_marginTop="1dp"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="修改密码"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                    android:id="@+id/change_pass"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/right_arrow_shezhi" />
+
+                   
+                    
+                </RelativeLayout>
+
+            </LinearLayout> -->
+            
+            <LinearLayout
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="45dp"
+ 			    android:orientation="vertical"
+ 			    android:background="@drawable/button_bg"
+ 			     android:layout_marginLeft="10dp"
+ 			     android:layout_marginRight="10dp"
+ 			     android:layout_marginTop="20dp"
+ 			     >
+
+ 				<TextView
+ 				    android:id="@+id/data_savedata"
+ 				    android:layout_width="match_parent"
+ 				    android:layout_height="match_parent"
+ 				    android:text="保存修改" 
+ 				    android:textSize="20sp"
+ 				    android:textColor="#ffffff"
+ 				    android:gravity="center"
+ 				    />
+ 			    
+ 			</LinearLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

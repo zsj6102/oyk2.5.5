@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.TopFragment" >
+    
+    
+    <ImageView
+                 android:id="@+id/topimg_null"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:src="@mipmap/ninezeronull"
+                 android:layout_marginTop="60dp"
+                 android:visibility="gone"
+                  />
+    
+     <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include layout="@layout/refresh_head" />
+
+    <zsj.com.oyk255.example.ouyiku.pullableview.PullableListView
+        android:id="@+id/top_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </zsj.com.oyk255.example.ouyiku.pullableview.PullableListView>
+
+      <include layout="@layout/load_more" />
+
+</zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
+</LinearLayout>

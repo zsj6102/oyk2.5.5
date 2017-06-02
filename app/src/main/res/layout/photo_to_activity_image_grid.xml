@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/gird_tv_cancel"
+            android:layout_width="50dip"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                style="@style/imgIconCommon"
+                android:layout_gravity="center"
+                android:src="@mipmap/back" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/ugptitle_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="相片选择"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <FrameLayout
+            android:id="@+id/ugptitle_click_right"
+            android:layout_width="@dimen/distance_50"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/gridview_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:horizontalSpacing="8dp"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:verticalSpacing="8dp" >
+        </GridView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/distance_44"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_gray_3" />
+
+            <Button
+                android:id="@+id/bt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="完成"
+                android:textColor="@color/color_gray_3"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

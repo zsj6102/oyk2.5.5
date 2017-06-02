@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    android:padding="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        >
+
+        <ImageView
+            android:id="@+id/hotnetred_more_img"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@mipmap/logo"
+            android:scaleType="fitXY"
+             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_marginLeft="10dp"
+            >
+
+        
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" 
+                android:layout_weight="1"
+                >
+                
+                 <TextView
+                android:id="@+id/hotnetred_more_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="隔壁老王" 
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/mediumsize"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                />
+
+                 <ImageView
+                     android:id="@+id/hotnetred_more_attention"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:src="@mipmap/h_attention"
+                     android:layout_gravity="bottom"
+                     />
+                
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/hotnetred_more_signature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="双飞粉色粉色我的期望地区的个人各方" 
+                    android:lines="2"
+                    android:ellipsize="end"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/fuzhutitle"
+                    android:textSize="12sp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

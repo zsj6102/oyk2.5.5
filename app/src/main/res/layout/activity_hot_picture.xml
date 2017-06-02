@@ -1,0 +1,217 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hotpicture_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.HotPictureActivity" >
+
+<RelativeLayout
+        android:id="@+id/hotnetred_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        
+
+
+        <TextView
+            android:id="@+id/hotpicture_titlename"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+        <RelativeLayout
+            android:id="@+id/hotpicture_back"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/back" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+<ScrollView
+    android:id="@+id/hotpicture_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:layout_weight="1"
+    >
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/hotpicture_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/zhutitle"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/hotpicture_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/fuzhutitle"
+            android:textSize="@dimen/mediumsize"
+            />
+
+        <TextView
+            android:id="@+id/hotpicture_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textSize="@dimen/bigtextsize"
+            android:textColor="@color/futitle"
+            android:layout_margin="10dp"
+            />
+
+
+        <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+            android:id="@+id/hotpicture_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:divider="#00000000"
+            android:focusable="false"
+            
+            >
+        </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+        
+        
+          <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+            android:id="@+id/hotpicture_scroll_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+        
+
+    </LinearLayout>
+</ScrollView>
+
+<RelativeLayout
+        android:id="@+id/hotnetred_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="#ffffff" >
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fuzhuxian"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/ht_picture_share"
+             >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/h_share" />
+
+        </RelativeLayout>
+       <TextView 
+           android:layout_width="1dp"
+           android:layout_height="match_parent"
+           android:background="@color/fuzhuxian"
+            android:layout_marginTop="10dp"
+           android:layout_marginBottom="10dp"
+           />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"
+             android:id="@+id/ht_picture_comment"
+            >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/h_comment"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:id="@+id/comment_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imageView3"
+                
+                />
+            
+        </RelativeLayout>
+<TextView 
+           android:layout_width="1dp"
+           android:layout_height="match_parent"
+           android:background="@color/fuzhuxian"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="10dp"
+           />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+             android:id="@+id/ht_picture_zan"
+             >
+                     <TextView
+                android:id="@+id/zan_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/hot_zan_img"
+                android:layout_marginLeft="10dp"
+              
+                />
+
+            <ImageView
+                android:id="@+id/hot_zan_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/h_like"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                />
+            
+            
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

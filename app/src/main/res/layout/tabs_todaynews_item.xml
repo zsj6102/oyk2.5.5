@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="今日新品" 
+        android:textSize="15sp"
+        android:textColor="@drawable/bottom_tab_text_color_selector"
+        android:gravity="center"
+        android:paddingTop="7dip"
+        android:paddingBottom="7dip"
+        />
+
+</LinearLayout>

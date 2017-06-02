@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp" >
+        
+       <View 
+           android:layout_width="4dp"
+           android:layout_height="20dp"
+           android:background="@color/theme_color"
+           android:layout_gravity="center"
+           />
+
+        <TextView
+            android:id="@+id/group_second_listviewitem_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="护肤" 
+            android:textSize="@dimen/mediumsize"
+            android:textColor="@color/zhutitle"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            />
+
+    </LinearLayout>
+
+    <zsj.com.oyk255.example.ouyiku.view.MyGridView
+        android:id="@+id/group_second_listviewitem_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="4" 
+        
+        >
+    </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+
+</LinearLayout>

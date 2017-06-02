@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="zsj.com.oyk255">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- 【必选】用以设置前台是否显示通知 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 可选 -->
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <application
+        android:name="zsj.com.oyk255.example.ouyiku.app.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/tubiao"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5678b46767e58e0545006666" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="126be3152688362d961fbf0f0ae06c70" >
+        </meta-data>
+        <!-- 监听通知点击或者忽略处理的广播 -->
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" >
+        </receiver>
+        <!-- 监听开机运行、网络连接变化、卸载的广播 -->
+        <receiver
+            android:name="com.umeng.message.SystemReceiver"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- 监听消息到达的广播 -->
+        <receiver
+            android:name="com.umeng.message.MessageReceiver"
+            android:exported="false"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 监听宿主选举的广播 -->
+        <receiver
+            android:name="com.umeng.message.ElectionReceiver"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4" />
+
+                <category android:name="umeng" />
+            </intent-filter>
+        </receiver>
+        <!-- 监听注册的广播 -->
+        <!-- 【应用包名】字符串需要替换成本应用的应用包名 -->
+        <receiver
+            android:name="com.umeng.message.RegistrationReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="zsj.com.oyk255.example.ouyiku.v1.intent.action.COMMAND" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.umeng.message.UmengMessageBootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <!-- Umeng的长连服务，用来建立推送的长连接的 -->
+        <!-- 【应用包名】字符串需要替换成本应用的应用包名 -->
+        <service
+            android:name="com.umeng.message.UmengService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="zsj.com.oyk255.example.ouyiku.v1.intent.action.START" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="zsj.com.oyk255.example.ouyiku.v1.intent.action.COCKROACH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING_V4" />
+
+                <category android:name="umeng" />
+            </intent-filter>
+        </service>
+
+        <!-- Umeng的消息接收服务 -->
+        <service
+            android:name="com.umeng.message.UmengIntentService"
+            android:process=":push" />
+
+        <!-- Umeng的消息路由服务 -->
+        <service
+            android:name="com.umeng.message.UmengMessageIntentReceiverService"
+            android:exported="true"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.android.agoo.client.ElectionReceiverService" />
+            </intent-filter>
+        </service>
+
+        <!-- v2.4.1添加的Service，Umeng的消息接收后的处理服务 -->
+        <service
+            android:name="com.umeng.message.UmengMessageCallbackHandlerService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.umeng.messge.registercallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.unregistercallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.handler.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.autoupdate.handler.action" />
+            </intent-filter>
+        </service>
+
+        <!-- V1.3.0添加的service，负责下载通知的资源 -->
+        <service android:name="com.umeng.message.UmengDownloadResourceService" />
+
+        <!-- V2.5.0添加的Service，用于本地通知 -->
+        <!-- 如果不使用本地通知，可以注释掉本地通知服务的配置 -->
+        <service
+            android:name="com.umeng.message.local.UmengLocalNotificationService"
+            android:exported="false" />
+
+        <!-- qq分享相关 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="1105451394" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx246edc55db723ecb" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.OykActivity"
+            android:label="@string/title_activity_oyk"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SearchResultActivity"
+            android:label="@string/title_activity_search_result"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ShezhiActivity"
+            android:label="@string/title_activity_shezhi"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.GRziliaoActivity"
+            android:label="@string/title_activity_grziliao"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.CollectionActivity"
+            android:label="@string/title_activity_collection"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ForgetActivity"
+            android:label="@string/title_activity_forget"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SetPasswordActivity"
+            android:label="@string/title_activity_set_password"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.OpinionActivity"
+            android:label="@string/title_activity_opinion"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.InviteActivity"
+            android:label="@string/title_activity_invite_main"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.AddressActivity"
+            android:label="@string/title_activity_address"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.FootprintActivity"
+            android:label="@string/title_activity_footprint"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ChangePhoneActivity"
+            android:label="@string/title_activity_change_phone"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Add_AaddressActivity"
+            android:label="@string/title_activity_add__aaddress"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Sale_afterActivity"
+            android:label="@string/title_activity_sale_after"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.MyOrderActivity"
+            android:label="@string/title_activity_my_order"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.WuliuActivity"
+            android:label="@string/title_activity_wuliu"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Invite_recordActivity"
+            android:label="@string/title_activity_invite_record"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.CouponsActivity"
+            android:label="@string/title_activity_coupons"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.My_walletActivity"
+            android:label="@string/title_activity_my_wallet"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Order_detailActivity"
+            android:label="@string/title_activity_order_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Order_detail_daifaActivity"
+            android:label="@string/title_activity_order_detail_daifa"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Order_detail_daishouActivity"
+            android:label="@string/title_activity_order_detail_daishou"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Order_detail_daifuActivity"
+            android:label="@string/title_activity_order_detail_daifu"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Order_detail_daipingActivity"
+            android:label="@string/title_activity_order_detail_daiping"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.TrialActivity"
+            android:label="@string/title_activity_trial"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.GiftActivity"
+            android:label="@string/title_activity_gift"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Brand_detailActivity"
+            android:label="@string/title_activity_brand_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SendCommentActivity"
+            android:label="@string/title_activity_send_comment"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.PayActivity"
+            android:label="@string/title_activity_pay"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx246edc55db723ecb" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Creat_fashionActivity"
+            android:label="@string/title_activity_creat_fashion"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <!--<activity-->
+            <!--android:name="zsj.com.oyk255.example.ouyiku.v1.Fashion_groupActivity"-->
+            <!--android:label="@string/title_activity_fashiongroup"-->
+            <!--android:screenOrientation="portrait" >-->
+        <!--</activity>-->
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Hot_netredActivity"
+            android:label="@string/title_activity_hot_netred"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.More_hotnetredActivity"
+            android:label="@string/title_activity_more_hotnetred"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Hot_netred_fansActivity"
+            android:label="@string/title_activity_hot_netred_fans"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Hot_netred_attentionActivity"
+            android:label="@string/title_activity_hot_netred_attention"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.HotPictureActivity"
+            android:label="@string/title_activity_hot_picture"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.PhoneChongzhiActivity"
+            android:label="@string/title_activity_phone_chongzhi"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.NewGoodsActivity"
+            android:label="@string/title_activity_new_goods"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.TryuseActivity"
+            android:label="@string/title_activity_tryuse"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SeaShopActivity"
+            android:label="@string/title_activity_sea_shop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.HotSaleActivity"
+            android:label="@string/title_activity_hot_sale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Group_secondActivity"
+            android:label="@string/title_activity_group_second"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Group_second_huazhuangActivity"
+            android:label="@string/title_activity_group_second_huazhuang"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.WebviewActivity"
+            android:label="@string/title_activity_webview"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ChangePassActivity"
+            android:label="@string/title_activity_change_pass"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.WuLiuListActivity"
+            android:label="@string/title_activity_wu_liu_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Fashion_groupActivity"
+            android:label="@string/title_activity_fashion_group"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.NewsBrandDetailActivity"
+            android:label="@string/title_activity_news_brand_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.NineDetailActivity"
+            android:label="@string/title_activity_nine_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.PersonMessageActivity"
+            android:label="@string/title_activity_person_message"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.MyHotPeopleActivity"
+            android:label="@string/title_activity_my_hot_people"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Safetivity"
+            android:label="@string/title_activity_safetivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.wjk.demouploadpic.photo.PhotoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.wjk.demouploadpic.photo.BitmapCache"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.wjk.demouploadpic.photo.ImageBucketActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.wjk.demouploadpic.photo.ImageGridActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SetTiXianPassActivity"
+            android:label="@string/title_activity_set_ti_xian_pass"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SetTixianActivity"
+            android:label="@string/title_activity_set_tixian"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ChangeSetpassActivity"
+            android:label="@string/title_activity_change_setpass"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.BindCardActivity"
+            android:label="@string/title_activity_bind_card"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ConfirmOrderActivity"
+            android:label="@string/title_activity_confirm_order"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.PaySuccessActivity"
+            android:label="@string/title_activity_pay_success"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:label="@string/title_activity_wechatsucc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.WelComeActivity"
+            android:label="@string/title_activity_wel_come"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ChongzhiSuccessActivity"
+            android:label="@string/title_activity_chongzhi_success"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.YinDaoActivity"
+            android:label="@string/title_activity_yin_dao"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ConfirmOrder9and0Activity"
+            android:label="@string/title_activity_confirm_order9and0"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SignActivity"
+            android:label="@string/title_activity_sign"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.TimeSaleActivity"
+            android:label="@string/title_activity_time_sale"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.TopActivity"
+            android:label="@string/title_activity_top"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.NewsPeopleDetailActivity"
+            android:label="@string/title_activity_news_people_detail"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.RedBagActivity"
+            android:label="@string/title_activity_red_bag"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.PinTuanActivity"
+            android:label="@string/title_activity_pin_tuan"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.CanTuanDetailActivity"
+            android:label="@string/title_activity_can_tuan_detail"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.PinDetailActivity"
+            android:label="@string/title_activity_pin_detail"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.ConfirmOrderPinTuanActivity"
+            android:label="@string/title_activity_confirm_order_pin_tuan"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.MyPinTuanActivity"
+            android:label="@string/title_activity_my_pin_tuan"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.MyPinOrderDetailActivity"
+            android:label="@string/title_activity_my_pin_order_detail"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.PaySuccessOrderActivity"
+            android:label="@string/title_activity_pay_success_order"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.MoreCommentActivity"
+            android:label="@string/title_activity_more_comment"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SaleAfter_ingActivity"
+            android:label="@string/title_activity_sale_after_ing"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.Apply_SaleAfterActivity"
+            android:label="@string/title_activity_apply__sale_after"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.HomeHuoDongActivity"
+            android:label="@string/title_activity_home_huo_dong"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SaleAfterSuccessDetailActivity"
+            android:label="@string/title_activity_sale_after_success_detail"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.HomeHuoDong2Activity"
+            android:label="@string/title_activity_home_huo_dong2"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.SaleAfterSuccessActivity"
+            android:label="@string/title_activity_sale_after_success"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+    </application>
+
+</manifest>

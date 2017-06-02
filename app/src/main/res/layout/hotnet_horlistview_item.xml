@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+	  <zsj.com.oyk255.example.ouyiku.view.CircleImageView
+            android:id="@+id/hotpicture_topview_touxiang"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/logo"
+            android:layout_margin="10dp"
+            app:border_width="1dp"
+            app:border_color="#ffffff"
+             />
+</LinearLayout>

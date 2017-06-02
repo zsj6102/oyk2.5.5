@@ -1,0 +1,211 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.SearchResultActivity" >
+<LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/title_color" >
+        
+    <RelativeLayout 
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+		android:id="@+id/result_tomain"
+        >
+        
+           <ImageView
+            android:id="@+id/back_tomain"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:src="@mipmap/back" />
+        
+    </RelativeLayout>
+
+     
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+
+            android:drawableLeft="@mipmap/homesearch"
+            android:ems="12"
+            android:hint="时尚女装，高档化妆品"
+            android:textColorHint="@color/fuzhutitle" 
+            android:textColor="@color/fuzhutitle"
+            android:paddingLeft="10dp"/>
+
+
+      <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="搜索"
+            android:textSize="17sp"
+            android:textColor="#ffffff" 
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+            
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="45dp" 
+    android:background="#ffffff"
+    >
+
+    <TextView
+        android:id="@+id/searchresult_comprehensive"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="综合"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textColor="@color/theme_color"
+         />
+
+    <TextView
+        android:id="@+id/searchresult_sales"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="销量"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="17sp" 
+        android:textColor="@color/futitle"
+        />
+
+   
+
+    <RelativeLayout
+        android:id="@+id/searchresult_price"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1" 
+        >
+
+        <TextView
+            android:id="@+id/searchresult_pricetv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="价格"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="17sp"
+            android:textColor="@color/futitle"
+             />
+
+
+        <ImageView
+            android:id="@+id/searchresult_priceimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/searchresult_pricetv"
+            android:src="@mipmap/arrow_default" />
+
+    </RelativeLayout>
+    
+  
+    
+    <RelativeLayout
+        android:id="@+id/searchresult_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1" 
+        >
+
+
+        <TextView
+            android:id="@+id/searchresult_discounttv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="折扣"
+            android:textColor="@color/futitle"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/searchresult_discountim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/searchresult_discounttv"
+            android:src="@mipmap/arrow_default" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+	
+
+<View 
+    android:layout_width="match_parent"
+    android:layout_height="10dp"
+    android:background="@color/background_color"
+    />
+ <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include layout="@layout/refresh_head" />
+    <!-- 支持所有实现Pullable接口的View -->
+<zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView
+    android:id="@+id/search_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+        
+        <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:textColor="#c9c9c9"
+                />
+          <ImageView
+            android:id="@+id/searchresult_null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/no_data"
+            android:layout_marginTop="50dp"
+            android:visibility="gone"
+            />
+        
+<zsj.com.oyk255.example.ouyiku.view.MyGridView
+    android:id="@+id/rearch_gridview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:horizontalSpacing="5dp"
+    android:numColumns="2"
+    android:verticalSpacing="5dp" >
+</zsj.com.oyk255.example.ouyiku.view.MyGridView>
+        
+    </LinearLayout>
+</zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView>
+
+    <include layout="@layout/load_more" />
+
+</zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
+    
+</LinearLayout>

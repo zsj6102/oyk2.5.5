@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/trading_xiaofei"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="消费" 
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/fuzhutitle"
+            />
+
+        <TextView
+            android:id="@+id/trading_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="16-11-21  22:18:21"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/fuzhutitle"
+             />
+
+        <TextView
+            android:id="@+id/trading_money"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="-200" 
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/fuzhutitle"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

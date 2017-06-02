@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp" >
+
+        <ImageView
+            android:id="@+id/dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="33dp"
+            android:src="@mipmap/qd_close" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/qd_bg" />
+
+        <TextView
+            android:id="@+id/dialog_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="31dp"
+            android:text="4秒后自动关闭"
+            android:textColor="@color/zhutitle"
+            android:textSize="@dimen/smalltextsize" />
+
+        <!--
+           <TextView
+               android:id="@+id/textView2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBaseline="@+id/textView1"
+               android:layout_alignBottom="@+id/textView1"
+               android:layout_alignRight="@+id/dialog_tv"
+               android:text="0.01元"
+               android:textColor="@color/theme_color"
+               android:textSize="@dimen/smalltextsize" />
+
+           <TextView
+               android:id="@+id/textView1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_above="@+id/dialog_tv"
+               android:layout_marginBottom="78dp"
+               android:layout_toLeftOf="@+id/textView2"
+               android:text="喜获"
+               android:textColor="@color/zhutitle"
+               android:textSize="@dimen/smalltextsize" />
+
+        -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/dialog_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="78dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="喜获"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/smalltextsize"
+                android:layout_weight="1"
+                android:gravity="right"
+                />
+
+            <TextView
+                android:id="@+id/sign_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.01元"
+                 android:textColor="@color/theme_color"
+                android:textSize="@dimen/smalltextsize"
+                android:layout_weight="1"
+                 />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

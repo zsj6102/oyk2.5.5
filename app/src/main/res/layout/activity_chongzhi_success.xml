@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.ChongzhiSuccessActivity" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height" 
+        android:background="@color/title_color"
+        >
+
+        <RelativeLayout
+            android:id="@+id/czsucess_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="充值订单详情"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/is_ok"
+                android:layout_marginTop="60dp"
+                />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="充值成功"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/text_size"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="本次充值:" 
+                    android:textColor="@color/futitle"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:layout_marginRight="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/czsucess_czmoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="￥100" 
+                    android:textColor="@color/theme_color"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="充值金额将在48小时内到帐" 
+                 android:textColor="@color/futitle"
+                android:textSize="@dimen/mediumsize"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                     android:textColor="@color/futitle"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:layout_marginRight="5dp"
+                    android:text="当前账户余额:" />
+
+                <TextView
+                    android:id="@+id/czsucess_totalmoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="￥88888"
+                     android:textColor="@color/theme_color"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                     />
+
+            </LinearLayout>
+            
+            
+            <TextView
+		    android:id="@+id/cz_success_finish"
+		    android:layout_width="match_parent"
+		    android:layout_height="45dp"
+		    android:text="完成" 
+		    android:textSize="20sp"
+		    android:textColor="#ffffff"
+		    android:background="@drawable/button_bg"
+		     android:gravity="center"
+		    android:layout_margin="15dp"
+		    />
+            
+            <TextView
+		    android:id="@+id/cz_success_toshop"
+		    android:layout_width="match_parent"
+		    android:layout_height="45dp"
+		    android:text="去购物" 
+		    android:textSize="20sp"
+		    android:textColor="#ffffff"
+		    android:background="@drawable/button_bg"
+		     android:gravity="center"
+		    android:layout_marginLeft="15dp"
+		    android:layout_marginRight="15dp"
+		    android:layout_marginBottom="15dp"
+		    />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

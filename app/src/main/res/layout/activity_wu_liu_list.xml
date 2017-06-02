@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.WuLiuListActivity" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height" 
+        android:background="@color/title_color"
+        >
+
+        <RelativeLayout
+            android:id="@+id/wuliulist_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的快递"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+    </RelativeLayout>
+    
+     <ImageView
+                android:id="@+id/wuliu_null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/kd_nothing"
+                android:layout_marginTop="60dp"
+                android:visibility="gone"
+                 />
+
+    <ListView
+        android:id="@+id/wuliulist_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+
+</LinearLayout>

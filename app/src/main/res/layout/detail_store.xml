@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+       android:id="@+id/detail_tobrand"
+         >
+
+        <ImageView
+            android:id="@+id/detail_brand_img"
+            android:layout_width="96dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+             android:scaleType="fitXY"
+            android:src="@mipmap/logo"
+            />
+
+    
+
+        <TextView
+            android:id="@+id/detail_brandname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/bigtextsize"
+            android:textColor="@color/zhutitle"
+            android:layout_marginTop="10dp"
+             />
+
+       
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/detail_collectview"
+            
+            >
+
+             <ImageView
+                 android:id="@+id/detail_collect"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentTop="true"
+                 android:src="@mipmap/collect" />
+        
+        </RelativeLayout>
+
+    </LinearLayout>
+
+				<LinearLayout
+				    android:layout_width="match_parent"
+				    android:layout_height="40dp" 
+				    >
+
+					<LinearLayout
+					    android:layout_width="wrap_content"
+					    android:layout_height="match_parent"
+					    android:orientation="vertical"
+					    android:layout_weight="1"
+					    android:gravity="center"
+					     >
+
+						<TextView
+						    android:id="@+id/detail_goodsnum"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:textColor="@color/zhutitle"
+						    />
+
+						<TextView
+						    android:id="@+id/textView3"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="全部商品"
+						    android:textColor="@color/futitle"
+						     />
+
+					</LinearLayout>
+			<View 
+			    android:layout_width="0.5dp"
+			    android:layout_height="30dp"
+			    android:layout_gravity="center_vertical"
+			    android:background="@color/fuzhuxian"
+			    />
+
+			<LinearLayout
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+			    android:orientation="vertical" 
+			    android:layout_weight="1"
+			     android:gravity="center"
+			    >
+
+				<TextView
+				    android:id="@+id/detail_colletesnum"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textColor="@color/zhutitle"
+				     />
+
+				<TextView
+				    android:id="@+id/textView5"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="收藏人数" 
+				    android:textColor="@color/futitle"
+				    />
+
+			</LinearLayout>
+			<View 
+			    android:layout_width="0.5dp"
+			    android:layout_height="30dp"
+			    android:layout_gravity="center_vertical"
+			    android:background="@color/fuzhuxian"
+			    />
+
+			<LinearLayout
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+			    android:orientation="vertical" 
+			    android:layout_weight="1"
+			     android:gravity="center"
+			    >
+
+				<TextView
+				    android:id="@+id/detail_haoping"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textColor="@color/zhutitle"
+				    />
+
+				<TextView
+				    android:id="@+id/textView7"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="人在买"
+				    android:textColor="@color/futitle"
+				     />
+
+			</LinearLayout>
+
+				</LinearLayout>
+				
+				<View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/background_color" 
+                    
+                    />
+
+</LinearLayout>

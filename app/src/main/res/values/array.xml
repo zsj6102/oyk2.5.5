@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+      <string-array name="hero_name">
+        <item>主播</item>
+        <item>嫩模</item>
+        <item>明星</item>
+        <item>学生</item>
+        <item>辣妈</item>
+    </string-array>   
+</resources>

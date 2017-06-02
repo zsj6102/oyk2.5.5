@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp" >
+
+        <TextView
+            android:id="@+id/comment_head_people"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="共999人参与评价" 
+            android:textSize="@dimen/mediumsize"
+            android:textColor="@color/zhutitle"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="好评率：" 
+            android:textSize="@dimen/mediumsize"
+            android:textColor="@color/zhutitle"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            />
+
+        <TextView
+            android:id="@+id/comment_head_haoping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.9%" 
+            android:textSize="@dimen/mediumsize"
+            android:textColor="@color/theme_color"
+            android:layout_marginRight="10dp"
+            />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp" 
+        >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="好评"
+            android:textSize="@dimen/mediumsize"
+            android:textColor="@color/zhutitle"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+             />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp" 
+        >
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="中评"
+            android:textSize="@dimen/mediumsize"
+            android:textColor="@color/zhutitle"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+             />
+
+       <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+         >
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="差评"
+            android:textSize="@dimen/mediumsize"
+            android:textColor="@color/zhutitle"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+             />
+
+       <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fuzhuxian"
+        android:layout_marginTop="10dp"
+        />
+	
+</LinearLayout>

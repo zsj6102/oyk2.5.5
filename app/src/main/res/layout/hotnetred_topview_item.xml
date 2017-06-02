@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FrameLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     >
+
+  
+
+    <LinearLayout
+        android:id="@+id/hotnetred_topview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/h_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+        </LinearLayout>
+
+        
+        
+        
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            
+            <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp" >
+
+                      <zsj.com.oyk255.example.ouyiku.view.CircleImageView
+                          android:id="@+id/hotnetred_img"
+                          android:layout_width="75dp"
+                          android:layout_height="75dp"
+                          android:layout_alignParentBottom="true"
+                          android:layout_centerHorizontal="true"
+                          app:border_width="1dp"
+            			  app:border_color="#ffffff"
+                          />
+
+                      <ImageView
+                          android:id="@+id/hotnetred_sex"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_alignParentBottom="true"
+                          android:layout_alignRight="@+id/hotnetred_img"
+                          android:layout_marginRight="17dp"
+                           />
+                      
+                    </RelativeLayout>
+
+            
+            
+        </LinearLayout>
+        
+        
+        
+        
+        
+        
+        
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp" >
+
+            <TextView
+                android:id="@+id/hotnetred_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/text_size" />
+
+            <ImageView
+                android:id="@+id/hotnetred_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:layout_toRightOf="@+id/hotnetred_name"
+                
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" >
+
+            <TextView
+                android:id="@+id/hotnetred_qianming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="2"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/mediumsize" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_margin="10dp"
+            android:background="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+            <LinearLayout
+                android:id="@+id/hotnetred_guanzhu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/attentnum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="关注"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@mipmap/h_line" />
+
+            <LinearLayout
+                android:id="@+id/hotnetred_fans"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/fansnum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="粉丝"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        
+
+    </LinearLayout>
+        <!-- <View
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00000000" /> -->
+
+</FrameLayout>

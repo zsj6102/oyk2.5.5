@@ -1,0 +1,318 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/newpeoplelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.DetailTopFragment" >
+
+    <zsj.com.oyk255.example.ouyiku.draglayout.CustScrollView
+        android:id="@+id/custScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            <RelativeLayout
+                android:id="@+id/RelativeLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" 
+                
+                >
+
+                <zsj.com.oyk255.example.ouyiku.view.CustomViewPager
+                    android:id="@+id/detail_lunbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true" >
+                </zsj.com.oyk255.example.ouyiku.view.CustomViewPager>
+
+                <zsj.com.oyk255.example.ouyiku.view.ViewpageIndicator
+                    android:id="@+id/viewpageIndicator2"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c9c9c9" />
+            </RelativeLayout>
+            
+            
+      <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content" >
+                
+           <TextView
+    android:id="@+id/detai_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:lines="2"
+    android:ellipsize="end"
+    android:textColor="@color/zhutitle"
+    android:textSize="@dimen/mediumsize"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:layout_weight="1"
+     />
+
+           <!-- <ImageView
+               android:id="@+id/detail_collect"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:src="@drawable/sc"
+               android:layout_gravity="center"
+               android:layout_marginRight="10dp"
+                /> -->
+
+           <ImageView
+               android:id="@+id/share_topview"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:src="@mipmap/m_share_42"
+               />
+          
+	 </LinearLayout>
+            
+           
+	
+	<!-- <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content" 
+	     android:layout_marginBottom="6dp"
+	     >
+                
+	      <TextView
+	         android:id="@+id/detail_attr"
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:textColor="@color/fuzhutitle"
+	         android:textSize="@dimen/mediumsize"
+	         android:layout_marginLeft="10dp"
+	         android:layout_weight="1"
+	         />
+	    
+                
+	     <TextView
+                        android:id="@+id/detail_daojishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/countdown"
+                        android:textColor="@color/theme_color" 
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="16dp"
+                        />
+
+	   
+	 </LinearLayout> -->
+	
+	
+
+	 <!-- <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content" >
+
+	     <TextView
+	         android:id="@+id/detail_newprice"
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:textSize="@dimen/bigtextsize"
+	         android:textColor="#ff0000"
+	         android:layout_marginLeft="10dp"
+	         android:layout_weight="1"
+	         />
+
+	     <TextView
+	         android:id="@+id/detail_sku"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:textSize="@dimen/mediumsize"
+	         android:textColor="@color/fuzhutitle"
+	         android:layout_marginRight="10dp"
+	         />
+
+	 </LinearLayout> -->
+	
+
+	 <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:layout_marginTop="4dp"
+	     android:layout_marginBottom="4dp"
+	      >
+	     
+	      <TextView
+	         android:id="@+id/detail_newprice"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginLeft="10dp"
+	         android:textSize="@dimen/bigtextsize"
+	         android:textColor="@color/price_color"
+	         />
+
+	     <TextView
+	         android:id="@+id/detail_oldprice"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginLeft="10dp"
+	         android:textSize="@dimen/smalltextsize"
+	         android:textColor="@color/fuzhutitle"
+	         />
+
+	     <TextView
+	         android:id="@+id/detail_baoyou"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="包邮" 
+	         android:textSize="@dimen/mediumsize"
+	         android:layout_weight="1"
+	         android:gravity="right"
+	         android:layout_marginRight="10dp"
+	         android:textColor="@color/zhutitle"
+	         />
+
+	 </LinearLayout>
+	 
+	 <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="10dp"
+	     android:background="#eeeeee"
+	     />
+	 
+	 <ImageView
+	     android:id="@+id/imageView1"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:src="@mipmap/buy_bg" />
+	 
+	  <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="10dp"
+	     android:background="#eeeeee"
+	     />
+	  
+	  <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="45dp" >
+
+	     <TextView
+	         android:id="@+id/textView2"
+	         android:layout_width="wrap_content"
+	         android:layout_height="match_parent"
+	         android:text="规格" 
+	         android:textColor="@color/zhutitle"
+	         android:textSize="@dimen/mediumsize"
+	         android:gravity="center|left"
+	         android:layout_marginLeft="10dp"
+	         android:layout_weight="1"
+	         />
+	     
+	      <TextView
+	         android:id="@+id/timedetail_attr"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	          android:textColor="@color/zhutitle"
+	         android:textSize="@dimen/mediumsize"
+	         android:layout_marginRight="10dp"
+	         />
+
+	     <ImageView
+	         android:id="@+id/imageView2"
+	         android:layout_width="wrap_content"
+	         android:layout_height="match_parent"
+	         android:src="@mipmap/right_arrow_shezhi"
+	         android:layout_marginRight="10dp"
+	          />
+	    
+
+
+	 </LinearLayout>
+	 
+	   <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="5dp"
+	     android:background="#eeeeee"
+	     />
+	  
+	   <include
+                android:id="@+id/detailstore"
+                layout="@layout/detail_store" 
+                />
+
+	 <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="45dp"
+	     android:orientation="vertical" >
+
+	     <TextView
+	         android:id="@+id/textView1"
+	         android:layout_width="match_parent"
+	         android:layout_height="match_parent"
+	         android:gravity="center"
+	         android:text="图文详情"
+	         android:textColor="@color/zhutitle"
+	         android:textSize="@dimen/bigtextsize" />
+
+	 </LinearLayout>
+	 <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="0.5dp"
+	     android:background="@color/fuzhuxian"
+	     />
+
+	 <LinearLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="45dp"
+	     android:background="#eeeeee"
+	      >
+	     
+	     <View 
+	         android:layout_width="match_parent"
+	         android:layout_height="0.5dp"
+	         android:background="@color/fuzhuxian"
+	         android:layout_gravity="center"
+	         android:layout_weight="1"
+	         android:layout_marginLeft="10dp"
+	         android:layout_marginRight="10dp"
+	         />
+
+	     <TextView
+	         android:id="@+id/textView4"
+	         android:layout_width="wrap_content"
+	         android:layout_height="match_parent"
+	         android:text="继续拖动查看详情" 
+	         android:textSize="@dimen/mediumsize"
+	         android:textColor="@color/zhutitle"
+	         android:gravity="center"
+	         />
+	     
+	     
+	      <View 
+	         android:layout_width="match_parent"
+	         android:layout_height="0.5dp"
+	         android:background="@color/fuzhuxian"
+	         android:layout_gravity="center"
+	         android:layout_weight="1"
+	         android:layout_marginRight="10dp"
+	         android:layout_marginLeft="10dp"
+	         
+	         />
+	     
+	 </LinearLayout>
+            
+        </LinearLayout>
+    </zsj.com.oyk255.example.ouyiku.draglayout.CustScrollView>
+
+</LinearLayout>

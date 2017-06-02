@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+    
+   <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp" >
+
+                <TextView
+                    android:id="@+id/pop_list_item_leibie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="尺码"
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
+
+                
+            </LinearLayout>
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                >
+                
+                 <zsj.com.oyk255.example.ouyiku.layouts.FlowLayout
+                    xmlns:f="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/pop_list_item_follow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|top"
+                    android:orientation="horizontal"
+                    f:layoutDirection="ltr"
+                    f:weightDefault="1.0" >
+                </zsj.com.oyk255.example.ouyiku.layouts.FlowLayout>
+                 
+            </LinearLayout>
+</LinearLayout>

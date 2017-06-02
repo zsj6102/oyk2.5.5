@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <LinearLayout
+            android:id="@+id/invis"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/tv_today"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="今日新品"
+                android:layout_weight="1"
+                 android:textColor="@color/zhutitle"
+                 />
+
+            <TextView
+                android:id="@+id/tv_mingri"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="明日预告" 
+                android:layout_weight="1"
+                android:gravity="center"
+                 android:textColor="@color/zhutitle"
+                />
+
+        </LinearLayout>
+    
+
+</LinearLayout>

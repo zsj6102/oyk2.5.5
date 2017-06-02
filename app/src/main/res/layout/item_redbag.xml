@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#eeeeee"
+        
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+         >
+
+        <ImageView
+            android:id="@+id/redbad_brandlogo"
+            android:layout_width="96dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/logo"
+           
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/redbad_brandtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="品牌名称特卖专场" 
+        android:textColor="@color/zhutitle"
+        android:textSize="@dimen/mediumsize"
+        android:gravity="center"
+        
+        />
+
+    <TextView
+        android:id="@+id/redbad_secondtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="年终让利，持续到底" 
+        android:textColor="@color/fuzhutitle"
+        android:textSize="@dimen/mediumsize"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp" 
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            >
+            
+            <View 
+                android:layout_width="100dp"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                
+                <View 
+                    android:layout_width="0.5dp"
+                    android:background="@color/fuzhuxian"
+                    android:layout_height="match_parent"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" 
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="￥" 
+                            android:textSize="@dimen/smalltextsize"
+                            android:textColor="@color/fuzhutitle"
+                            />
+
+                        <TextView
+                            android:id="@+id/redbag_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10.0"
+                            android:textSize="@dimen/title_size"
+                             android:textColor="@color/zhutitle"
+                             android:textStyle="bold"
+                             />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/wumenkan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="无门槛红包" 
+                        android:textColor="@color/zhutitle"
+                        android:textSize="@dimen/mediumsize"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        />
+                    
+                    
+                    
+ 			<LinearLayout
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="33dp"
+ 			    android:orientation="vertical"
+ 			    android:background="@drawable/button_bg"
+ 			     android:layout_marginLeft="10dp"
+ 			     android:layout_marginRight="10dp"
+ 			     android:layout_marginBottom="20dp"
+ 			     >
+
+ 				<TextView
+ 				    android:id="@+id/redbag_get"
+ 				    android:layout_width="match_parent"
+ 				    android:layout_height="match_parent"
+ 				    android:text="立即领取" 
+ 				    android:textSize="@dimen/mediumsize"
+ 				    android:textColor="#ffffff"
+ 				    android:gravity="center"
+ 				    />
+ 			    
+ 			</LinearLayout>
+ 			
+ 			<View 
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="0.5dp"
+ 			    android:background="@color/fuzhuxian"
+ 			    />
+                    
+
+                </LinearLayout>
+
+                <View 
+                    android:layout_width="0.5dp"
+                    android:background="@color/fuzhuxian"
+                    android:layout_height="match_parent"
+                    />
+                
+            </LinearLayout>
+            
+            
+            
+        </LinearLayout>
+        
+        
+    <!--     第二个 -->
+        
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:id="@+id/redbag_secondview"
+            >
+            
+            <View 
+                android:layout_width="100dp"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                
+                <View 
+                    android:layout_width="0.5dp"
+                    android:background="@color/fuzhuxian"
+                    android:layout_height="match_parent"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1"
+                    >
+
+
+                        <zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView
+                            android:id="@+id/redbag_img1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/logo"
+                            />
+
+
+                    <TextView
+                        android:id="@+id/redbag_newpirce1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/redbag_price"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        />
+                    
+                    
+                     <TextView
+                        android:id="@+id/redbag_oldpirce1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/fuzhutitle"
+                        android:textSize="@dimen/smalltextsize"
+                        android:gravity="center"
+                        android:layout_marginBottom="20dp"
+                        />
+                    
+                    
+ 			
+ 			<View 
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="0.5dp"
+ 			    android:background="@color/fuzhuxian"
+ 			    />
+                    
+
+                </LinearLayout>
+
+                <View 
+                    android:layout_width="0.5dp"
+                    android:background="@color/fuzhuxian"
+                    android:layout_height="match_parent"
+                    />
+                
+            </LinearLayout>
+            
+            
+            
+        </LinearLayout>
+        
+        
+        <!-- 第三个 -->
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+             android:id="@+id/redbag_thridview"
+            >
+            
+            <View 
+                android:layout_width="100dp"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                
+                <View 
+                    android:layout_width="0.5dp"
+                    android:background="@color/fuzhuxian"
+                    android:layout_height="match_parent"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1"
+                    >
+
+                    <zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView
+                            android:id="@+id/redbag_img2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/logo"
+                            
+                            />
+
+
+                    <TextView
+                        android:id="@+id/redbag_newpirce2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/redbag_price"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        />
+                    
+                    
+                     <TextView
+                        android:id="@+id/redbag_oldpirce2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/fuzhutitle"
+                        android:textSize="@dimen/smalltextsize"
+                        android:gravity="center"
+                        android:layout_marginBottom="20dp"
+                        />
+                    
+                    
+ 			
+ 			<View 
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="0.5dp"
+ 			    android:background="@color/fuzhuxian"
+ 			    />
+
+                </LinearLayout>
+
+                <View 
+                    android:layout_width="0.5dp"
+                    android:background="@color/fuzhuxian"
+                    android:layout_height="match_parent"
+                    />
+                
+            </LinearLayout>
+            
+            
+            
+        </LinearLayout>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </LinearLayout>
+
+</LinearLayout>

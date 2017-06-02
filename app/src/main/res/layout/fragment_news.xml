@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.NewsFragment" >
+
+    
+     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+ <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include layout="@layout/refresh_head" />
+        <zsj.com.oyk255.example.ouyiku.pullableview.PullableListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+          <include layout="@layout/load_more" />
+
+</zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
+        
+         <LinearLayout
+            android:id="@+id/invis"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/tv_today"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="今日新品"
+                android:layout_weight="1"
+                android:textColor="@color/zhutitle"
+                
+                 />
+
+            <TextView
+                android:id="@+id/tv_mingri"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="明日预告" 
+                android:layout_weight="1"
+                android:gravity="center"
+                 android:textColor="@color/zhutitle"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</RelativeLayout>

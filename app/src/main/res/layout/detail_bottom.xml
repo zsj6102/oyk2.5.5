@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="horizontal" 
+    android:background="#ffffff"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" 
+        android:layout_weight="7"
+        >
+
+        <TextView
+            android:id="@+id/detail_bttom_share"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableTop="@mipmap/share"
+            android:text="分享" 
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="3dp"
+            />
+
+        <TextView
+            android:id="@+id/detail_bttom_store"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableTop="@mipmap/shop"
+            android:text="品牌" 
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="3dp"
+            />
+
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" 
+            
+            android:id="@+id/baby_collectview">
+            
+            <ImageView 
+                android:id="@+id/baby_collect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/collect1"
+                android:layout_marginTop="3dp"
+                />
+            
+            <TextView
+            android:id="@+id/detail_bttom_collect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="收藏" 
+            android:gravity="center"
+            android:layout_marginTop="3dp"
+            />
+            
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_weight="5"
+        >
+        
+        
+          <TextView
+        android:id="@+id/detail_bttom_intoshopcar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/price_color"
+        android:gravity="center"
+        android:text="加入购物车"
+        android:textColor="#ffffff"
+        android:textSize="17sp" 
+         android:layout_weight="1"
+        />
+          
+           <TextView
+        android:id="@+id/detail_bttom_buy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:text="立刻购买"
+        android:textColor="#ffffff"
+        android:textSize="17sp" 
+         android:layout_weight="1"
+        /> 
+        
+    </LinearLayout>
+
+</LinearLayout>

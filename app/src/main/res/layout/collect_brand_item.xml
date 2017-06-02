@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+ <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fuzhuxian"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp" >
+        
+        
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"
+            android:background="#ffffff"
+            >
+            
+            <CheckBox
+                    android:id="@+id/checkcollbrand_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/pitch_radiogreen_selector"
+                     android:layout_marginRight="10dp"
+                     android:layout_marginLeft="10dp"
+                     />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkcollbrand_all"
+                android:layout_alignBottom="@+id/checkcollbrand_all"
+                android:layout_toRightOf="@+id/checkcollbrand_all"
+                android:text="全选" 
+                android:textSize="@dimen/bigtextsize"
+                android:textColor="@color/zhutitle"
+                />
+
+        </RelativeLayout>
+
+      <!--   <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_weight="1"
+            android:background="#eeeeee"
+            
+            >
+
+            <TextView
+                android:id="@+id/coll_brand_quxiao"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="取消" 
+                  android:textSize="@dimen/bigtextsize"
+                  android:gravity="center"
+                  android:textColor="@color/zhutitle"
+                />
+
+        </LinearLayout> -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.5"
+            android:background="#ff0000"
+             >
+
+            <TextView
+                android:id="@+id/coll_brand_del"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="删除" 
+                android:textSize="@dimen/bigtextsize"
+                  android:gravity="center"
+                  android:textColor="#ffffff"
+                />
+
+        </LinearLayout>
+        
+    </LinearLayout>
+</LinearLayout>

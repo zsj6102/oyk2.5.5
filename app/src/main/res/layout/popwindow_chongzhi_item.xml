@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00000000"
+     >
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_marginTop="100dp"
+        android:background="#ffffff"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="输入充值金额" 
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/zhutitle"
+                android:gravity="center"
+                android:textSize="@dimen/mediumsize"
+                />
+
+        </LinearLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fuzhuxian"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp" >
+
+            <EditText
+                android:id="@+id/pop_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:ems="10"
+                android:lines="1"
+                android:inputType="number"
+                android:hint="请输入大于一百的金额"
+              	android:textSize="@dimen/mediumsize"
+                 >
+
+                <requestFocus />
+            </EditText>
+            
+        </LinearLayout>
+         <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fuzhuxian"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+         
+         <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" 
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/pop_quxiao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="32dp"
+                    android:layout_toLeftOf="@+id/pop_save"
+                    android:text="取消"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center_vertical"
+                     />
+
+                <TextView
+                    android:id="@+id/pop_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignBaseline="@+id/pop_quxiao"
+                    android:layout_alignBottom="@+id/pop_quxiao"
+                    android:layout_alignParentRight="true"
+                    android:text="确定"
+                    android:layout_marginRight="10dp"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center_vertical"
+                     />
+
+            </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

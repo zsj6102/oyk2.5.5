@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View 
+             android:layout_width="match_parent"
+             android:layout_height="10dp"
+             android:background="#eeeeee"
+             />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="#ffffff"
+        
+        >
+
+        <zsj.com.oyk255.example.ouyiku.view.CircleImageView
+            android:id="@+id/hotpicture_topview_touxiang"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/logo"
+            android:layout_margin="10dp"
+            app:border_width="1dp"
+            app:border_color="#ffffff"
+             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/hotpicture_topview_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/mediumsize"
+                />
+
+            <TextView
+                android:id="@+id/hotpicture_topview_fans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/futitle"
+                android:textSize="@dimen/smalltextsize"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/hotpicture_topview_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/h_attention"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fuzhuxian"
+        />
+    
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp" 
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Ta们也关注了"
+                android:textColor="@color/theme_color"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                 />
+
+
+        </LinearLayout>
+        <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" >
+            
+                
+                   <zsj.com.oyk255.example.ouyiku.view.HorizontalListView
+            android:id="@+id/hotpicture_horizontallistview"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+             >
+
+        </zsj.com.oyk255.example.ouyiku.view.HorizontalListView>
+            
+         </LinearLayout>
+        
+        
+         <View 
+             android:layout_width="match_parent"
+             android:layout_height="10dp"
+             android:background="#eeeeee"
+             />
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp" 
+            android:background="#ffffff"
+            
+            >
+
+            <TextView
+                android:id="@+id/hotpicture_topview_commentnum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/zhutitle"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                 />
+
+
+        </LinearLayout>
+
+         
+
+</LinearLayout>

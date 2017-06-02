@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.More_hotnetredActivity" >
+
+	<RelativeLayout
+        android:id="@+id/hotnetred_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        
+
+
+        <TextView
+            android:id="@+id/remenwanghong_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="热门网红"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+        <RelativeLayout
+            android:id="@+id/morenet_back"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/back" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+	<ListView
+	    android:id="@+id/morenet_listView"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+	</ListView>
+
+</LinearLayout>

@@ -1,0 +1,495 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.Apply_SaleAfterActivity"
+    android:background="#ffffff"
+     >
+     
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height" 
+        android:background="@color/title_color"
+        android:id="@+id/hotnetred_title"
+        >
+
+        <RelativeLayout
+            android:id="@+id/apply_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/hotnetred_titlename"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="售后申请"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_size" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/shouhouleixing"
+                android:background="#eeeeee"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="售后类型"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+            </LinearLayout>
+            
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                 android:background="#ffffff"
+                 android:id="@+id/tuikuan"
+                 >
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我要退款(无需退货)"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                     />
+                
+              <RelativeLayout
+               android:layout_width="35dp"
+               android:layout_height="match_parent"
+                android:id="@+id/tuikuan_check"
+                >
+
+               <ImageView
+                   android:id="@+id/img_tuikuan"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"
+                   android:src="@mipmap/fukuan_pitch_on" />
+
+           </RelativeLayout>
+            </LinearLayout>
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                />
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                 android:background="#ffffff"
+                 android:id="@+id/tuihuo"
+                 >
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我要退货"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                     />
+                
+              <RelativeLayout
+               android:layout_width="35dp"
+               android:layout_height="match_parent"
+                android:id="@+id/tuihuo_check"
+                >
+
+               <ImageView
+                   android:id="@+id/img_tuihuo"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"
+                   android:src="@mipmap/fukuan_pitch_on" />
+
+           </RelativeLayout>
+            </LinearLayout>
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+             
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                 android:background="#ffffff"
+                 android:id="@+id/huanhuo"
+                 >
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我要换货"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                     />
+                
+              <RelativeLayout
+               android:layout_width="35dp"
+               android:layout_height="match_parent"
+                android:id="@+id/huanhuo_check"
+                >
+
+               <ImageView
+                   android:id="@+id/img_huanhuo"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"
+                   android:src="@mipmap/fukuan_pitch_on" />
+
+           </RelativeLayout>
+            </LinearLayout>
+             
+              <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+             
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/shouhouyuanyin"
+                android:background="#eeeeee"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="售后原因"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+            </LinearLayout>
+              <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+             
+               <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                 android:background="#ffffff"
+                 android:id="@+id/reason"
+                 >
+
+                   <EditText
+                       android:id="@+id/tuikuan_reason_et"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:ems="10"
+                       android:gravity="top|left"
+                       android:textSize="@dimen/mediumsize"
+                       android:textColor="@color/zhutitle"
+                       android:hint="请输入退款原因"
+                       android:background="@null"
+                       android:layout_margin="10dp" 
+                       android:cursorVisible="true"
+                       android:textCursorDrawable="@null"
+                                             >
+
+                   </EditText>
+             
+            </LinearLayout>
+              
+                <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+              
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/tuikuanjine"
+                android:background="#eeeeee"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退款金额"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+            </LinearLayout>
+              
+                <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+              
+               <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                 android:background="#ffffff"
+                 android:id="@+id/tuikuanmoney"
+                 >
+
+                   <EditText
+                       android:id="@+id/tuikuan_money_et"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:ems="10"
+                       android:gravity="center|left"
+                       android:textSize="@dimen/mediumsize"
+                       android:textColor="@color/zhutitle"
+                       android:hint="请输入退款金额"
+                       android:lines="1"
+                        android:inputType="phone"
+                        android:background="@null"
+                        android:layout_marginLeft="10dp"  
+                        android:cursorVisible="true"
+                       android:textCursorDrawable="@null" 
+                        >
+
+                   </EditText>
+
+             
+            </LinearLayout>
+              
+                <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+                
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/name"
+                android:background="#eeeeee"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系人"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+            </LinearLayout>
+              
+                <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+              
+               <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                 android:background="#ffffff"
+                 android:id="@+id/tuikuanname"
+                 >
+
+                   <EditText
+                       android:id="@+id/tuikuan_name_et"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:ems="10"
+                       android:gravity="center|left"
+                       android:textSize="@dimen/mediumsize"
+                       android:textColor="@color/zhutitle"
+                       android:hint="请输入用户姓名"
+                       android:lines="1"
+                        android:inputType="text"
+                        android:background="@null"
+                        android:layout_marginLeft="10dp"  
+                        android:cursorVisible="true"
+                       android:textCursorDrawable="@null" 
+                        >
+
+                   </EditText>
+
+             
+            </LinearLayout>
+              
+                <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/tuikuanphone"
+                android:background="#eeeeee"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系电话"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+            </LinearLayout>
+            
+              <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+              
+               <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                 android:background="#ffffff"
+                 android:id="@+id/tuikuanphone"
+                 >
+
+                   <EditText
+                       android:id="@+id/tuikuan_phone_et"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:ems="10"
+                       android:gravity="center|left"
+                       android:textSize="@dimen/mediumsize"
+                       android:textColor="@color/zhutitle"
+                       android:hint="请输入联系电话"
+                       android:lines="1"
+                        android:inputType="phone"
+                        android:background="@null"
+                        android:layout_marginLeft="10dp"  
+                        android:cursorVisible="true"
+                       android:textCursorDrawable="@null" 
+                        >
+
+                   </EditText>
+
+             
+            </LinearLayout>
+            
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/tuikuanpic"
+                android:background="#eeeeee"
+                 >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图文说明"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                     />
+            </LinearLayout>
+            
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                /> 
+            
+            <zsj.com.oyk255.example.ouyiku.view.MyGridView
+        android:id="@+id/apply_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3" 
+        android:layout_margin="10dp"
+        >
+   			 </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+            
+            
+            
+        </LinearLayout>
+    </ScrollView>
+    
+    <TextView
+		    android:id="@+id/apply_btn"
+		    android:layout_width="match_parent"
+		    android:layout_height="45dp"
+		    android:text="提交申请" 
+		    android:textSize="20sp"
+		    android:textColor="#ffffff"
+		    android:background="@drawable/button_bg"
+		     android:gravity="center"
+		    android:layout_margin="10dp"
+		    />
+    
+    
+    
+
+</LinearLayout>

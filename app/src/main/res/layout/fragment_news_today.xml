@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.News_todayFragment" >
+
+  <View 
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:background="@color/fuzhuxian"
+      />
+
+    <ListView
+        android:id="@+id/newstoday_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.TixianFragment"
+    android:background="#ffffff"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="持卡人姓名：" 
+                    android:textSize="15sp"
+                    android:textColor="@color/zhutitle"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/tixian_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:background="@null"
+                    android:inputType="textPersonName" 
+                    android:hint="请输入持卡人姓名"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:textSize="13sp"
+                    >
+					
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+              <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fuzhuxian"
+        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="提现卡号：" 
+                    android:textSize="15sp"
+                    android:textColor="@color/zhutitle"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+
+
+                 <TextView
+                    android:id="@+id/tixian_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="请先绑定银行卡" 
+                    android:textSize="13sp"
+                    android:textColor="@color/futitle"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="10dp"
+                      android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+             <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fuzhuxian"
+        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="提现金额：" 
+                    android:textSize="15sp"
+                    android:textColor="@color/zhutitle"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+
+
+                <EditText
+                    android:id="@+id/tixian_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="请输入提现金额"
+                    android:textSize="13sp"
+                    android:background="@null"
+                    android:inputType="numberDecimal" 
+                    android:textColor="#ff4e4e"
+                   	android:textColorHint="#ff4e4e"
+                    />
+
+            </LinearLayout>
+            <View 
+     			   android:layout_width="match_parent"
+    			   android:layout_height="1dp"
+   				   android:background="@color/fuzhuxian"
+        />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="密码：" 
+                    android:textSize="15sp"
+                    android:textColor="@color/zhutitle"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/tixian_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:background="@null"
+                    android:inputType="textPassword"
+                     android:textSize="13sp"
+                     android:lines="1"
+                     />
+
+                <TextView
+                    android:id="@+id/tixian_forget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="忘记密码?" 
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+             <View 
+     			   android:layout_width="match_parent"
+    			   android:layout_height="1dp"
+   				   android:background="@color/fuzhuxian"
+        />
+             
+             <TextView
+      			  android:id="@+id/tixian_btn"
+     			  android:layout_width="match_parent"
+     			  android:layout_height="45dp"
+    			  android:text="提交申请"
+  			      android:textSize="20sp"
+ 			      android:textColor="#ffffff"
+ 			      android:gravity="center"
+     			  android:background="@drawable/button_bg_unbind"
+    			  android:layout_margin="15dp"
+         />
+
+             
+
+                 <TextView
+                     android:id="@+id/tiixan_xieyi"
+                     android:layout_width="match_parent"
+                     android:layout_height="40dp"
+                     android:gravity="center"
+                     android:text="*申请提现协议"
+                     android:textColor="@color/theme_color" />
+           
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

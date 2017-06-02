@@ -1,0 +1,269 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.TrialActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="@mipmap/try_bg"
+        >
+
+        <ImageView
+            android:id="@+id/mytry_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/try_arrows"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的试用" 
+            android:textSize="@dimen/title_size"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            />
+        
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="我的试用" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+                
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:layout_marginTop="1dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="申请中" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center"
+                    android:layout_marginLeft="25dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/trial_applying"
+                     >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                </RelativeLayout>
+                
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:layout_marginTop="1dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="申请成功" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center"
+                    android:layout_marginLeft="25dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/trial_applysuccess"
+                     >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                    <ImageView
+                        android:id="@+id/trial_applysuccess_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/imageView2"
+                        android:src="@mipmap/red" />
+
+                </RelativeLayout>
+                
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:layout_marginTop="1dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="申请成功" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center"
+                    android:layout_marginLeft="25dp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/trial_applyfail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                     <ImageView
+                        android:id="@+id/imageView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                    <ImageView
+                        android:id="@+id/trial_applyfail_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/imageView22"
+                        android:src="@mipmap/red" />
+
+                </RelativeLayout>
+                
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="试用提醒" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+                
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/trial_tixing"
+                     >
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                </RelativeLayout>
+                
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="试用申请协议" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/bigtextsize"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+                
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/trial_xieyi"
+                     >
+
+                    <ImageView
+                        android:id="@+id/imageView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/right_arrow_shezhi" />
+
+                </RelativeLayout>
+                
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

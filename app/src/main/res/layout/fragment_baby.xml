@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.BabyFragment" >
+    <ImageView
+        android:id="@+id/collbaby_null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:src="@mipmap/collect_null_bb" />
+
+    <ListView
+        android:id="@+id/baby_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+         >
+    </ListView>
+    <include 
+          android:id="@+id/includebabybottom"
+            layout="@layout/collect_baby_item" 
+        />
+
+    
+
+</LinearLayout>

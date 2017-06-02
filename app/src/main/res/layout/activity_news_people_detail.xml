@@ -1,0 +1,152 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/newpeoplelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.NewsPeopleDetailActivity" >
+
+    <LinearLayout
+        android:id="@+id/hotnetred_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/ninedetail_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/hotnetred_titlename"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="商品详情"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+        <RelativeLayout
+            android:id="@+id/ninedetail_share"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+             >
+
+            
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="分享" 
+                android:textSize="@dimen/bigtextsize"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <zsj.com.oyk255.example.ouyiku.draglayout.DragLayout
+        android:id="@+id/draglayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <FrameLayout
+            android:id="@+id/first"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <FrameLayout
+            android:id="@+id/second"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </zsj.com.oyk255.example.ouyiku.draglayout.DragLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fuzhuxian" />
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+       <!--  <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center" 
+            android:layout_marginRight="12dp"
+            >
+
+            <ImageView
+                android:id="@+id/delete_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/frame1" />
+
+            <ImageView
+                android:id="@+id/add_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/num"
+                android:src="@drawable/frame3" />
+
+            <TextView
+                android:id="@+id/num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/delete_num"
+                android:background="@drawable/frame2"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="@dimen/mediumsize" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ninedetail_tocar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_bg"
+            android:gravity="center"
+            android:text="加入购物车"
+            android:textColor="#ffffff"
+            android:layout_margin="6dp"
+            android:textSize="@dimen/mediumsize" 
+			android:layout_weight="1"
+				/> -->
+        
+        <TextView
+            android:id="@+id/ninedetail_buy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_bg"
+            android:gravity="center"
+            android:text="立刻抢购"
+            android:textColor="#ffffff"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:textSize="@dimen/mediumsize" 
+				/>
+    </LinearLayout>
+
+</LinearLayout>

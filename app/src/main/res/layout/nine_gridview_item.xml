@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/griditems_bg"
+    >
+    
+   
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@drawable/gridview_itembackground"
+           >
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:orientation="vertical" 
+              android:layout_weight="1"
+              >
+              
+               <zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView
+        android:id="@+id/nineitem_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="10dp"
+        />
+    
+    <TextView
+        android:id="@+id/nineitem_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/gridview_imginfo"
+        android:lines="2"
+        android:ellipsize="end"
+        android:layout_margin="8dp"
+        android:textSize="@dimen/goods_title"
+         android:textColor="#333333"
+         />
+    
+    <TextView
+        android:id="@+id/nineitem_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="@dimen/goods_title"
+        android:textColor="@color/price_color" />
+    
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/gridview_price"
+        android:layout_marginBottom="8dp"
+         >
+
+        <TextView
+            android:id="@+id/nineitem_oldprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/oldprice_color"
+            android:layout_weight="1"
+            android:lines="1"
+            />
+
+         <TextView
+             android:id="@+id/nineitem_discount"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="8dp"
+             android:paddingRight="10dp"
+             android:textColor="@color/price_color"
+              />
+         
+    </LinearLayout>
+          </LinearLayout>
+
+      </LinearLayout>
+
+</LinearLayout>

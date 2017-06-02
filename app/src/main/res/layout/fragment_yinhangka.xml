@@ -1,0 +1,179 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.YinhangkaFragment"
+    android:background="#eeeeee"
+     >
+
+    
+   
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:id="@+id/bank_unbind"
+        android:visibility="gone"
+        >
+          <ImageView
+        android:id="@+id/bank_null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/nothing_bank"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="45dp"
+              android:layout_marginTop="30dp" 
+              android:id="@+id/bank_tobindview"
+              >
+
+              <TextView
+                  android:id="@+id/bank_tobind"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentTop="true"
+                  android:layout_centerHorizontal="true"
+                  android:text="立即绑定"
+                  android:textColor="@color/theme_color"
+                  android:textSize="15sp" />
+          </RelativeLayout>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/bank_bind"
+        android:visibility="gone"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="#ffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+             >
+
+            <ImageView
+                android:id="@+id/bank_img"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/logo"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/bank_bankname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/zhutitle"
+                    android:textSize="15dp"
+                     />
+
+                <TextView
+                    android:id="@+id/bank_weihao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:textColor="@color/fuzhutitle"
+                    android:gravity="center_vertical"
+                     />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="#ffffff"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            >
+            
+            <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fuzhuxian"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+            
+        </LinearLayout>
+        
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp" 
+            android:background="#ffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" 
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:id="@+id/bank_change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_bg_unbind"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="解除绑定"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/mediumsize" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/bank_tixian"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="提现" 
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:background="@drawable/button_bg"
+                android:textSize="@dimen/mediumsize"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:onClick="toTixian"
+                android:clickable="true"
+                />
+            
+
+        </LinearLayout>
+
+        
+        
+    </LinearLayout>
+
+</FrameLayout>

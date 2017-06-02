@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.Group_second_huazhuangActivity" >
+    
+    <RelativeLayout
+        android:id="@+id/group_second_title2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        
+
+
+        <TextView
+            android:id="@+id/group_second_title_meizhuang"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="美妆"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+        <RelativeLayout
+            android:id="@+id/group_second_title_meizhuang_back"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/back" />
+
+        </RelativeLayout>
+<!-- 
+        <ImageView
+            android:id="@+id/group_second_title_meizhuang_shopcar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/shoppingcar" /> -->
+
+    </RelativeLayout>
+    
+    
+    
+    
+    	<zsj.com.oyk255.example.ouyiku.view.StickyNavLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+  
+ <FrameLayout
+        android:id="@id/id_stickynavlayout_topview"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+         >
+			
+            <ImageView
+            android:id="@+id/group_second_title_meizhuang_img"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/logo" />
+            
+
+                
+    </FrameLayout>
+    <zsj.com.oyk255.example.ouyiku.view.SimpleViewPagerIndicator
+        android:id="@id/id_stickynavlayout_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffffff" >
+    </zsj.com.oyk255.example.ouyiku.view.SimpleViewPagerIndicator>
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/id_stickynavlayout_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#44ff0000" >
+    </android.support.v4.view.ViewPager>
+
+</zsj.com.oyk255.example.ouyiku.view.StickyNavLayout>
+    
+    
+
+</LinearLayout>

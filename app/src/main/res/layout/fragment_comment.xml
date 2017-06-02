@@ -1,0 +1,17 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   android:id="@id/id_stickynavlayout_innerscrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.CommentFragment"
+    android:background="#ffffff"
+     >
+
+  <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+        android:id="@+id/comment_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+    
+</ScrollView>

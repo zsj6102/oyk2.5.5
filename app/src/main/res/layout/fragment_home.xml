@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.HomeFragment" >
+
+    <include
+        android:id="@+id/titlebar"
+        layout="@layout/actionbar_index_custom" />
+    
+
+
+    <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include layout="@layout/refresh_head" />
+    <!-- 支持所有实现Pullable接口的View -->
+
+    <zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/homescrollView"
+         >
+
+           <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+				
+                <include 
+        android:id="@+id/headview"
+        layout="@layout/lunboview_item"
+        />
+
+    <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+        android:id="@+id/home_listdview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:background="#ffffff"
+       android:dividerHeight="3dp"
+       android:divider="@color/background_color"
+        >
+    </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+               
+               
+            </LinearLayout>
+    </zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView>
+
+    <include layout="@layout/load_more" />
+
+</zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
+
+</LinearLayout>

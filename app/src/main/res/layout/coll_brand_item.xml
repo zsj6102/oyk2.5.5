@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:background="#ffffff"
+         >
+
+         <CheckBox
+                    android:id="@+id/checkcollbrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/pitch_radiogreen_selector"
+                     android:layout_marginRight="10dp"
+                     android:layout_marginLeft="10dp"
+                       android:clickable="false"
+     				   android:focusable="false"
+                     />
+
+        <ImageView
+            android:id="@+id/coll_brand_img"
+            android:layout_width="145dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/logo"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+             >
+
+            <TextView
+                android:id="@+id/coll_brand_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="品牌名称" 
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/mediumsize"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/coll_brand_num"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:text="在售商品(9999)"
+                android:textSize="@dimen/goods_title" 
+                android:textColor="@color/fuzhutitle"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

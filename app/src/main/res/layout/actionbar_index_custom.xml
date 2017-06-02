@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="horizontal"
+    android:background="@color/title_color" >
+
+
+    <TextView
+        android:id="@+id/search_edit"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/search_bg"
+        android:drawableLeft="@mipmap/homesearch"
+		android:layout_marginLeft="10dp"        
+        android:gravity="center_vertical"
+        android:hint="搜索您想要的商品"
+        android:singleLine="true"
+        android:textColorHint="@color/fuzhutitle"
+        android:layout_weight="1"
+        android:textSize="14.0sp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:drawablePadding="5dp"
+         />
+
+    <ImageView
+        android:id="@+id/ouyiku_logo"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/zu_28"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center_vertical"
+        />
+
+</LinearLayout>

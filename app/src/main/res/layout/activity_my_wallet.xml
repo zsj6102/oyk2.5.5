@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wallet_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.My_walletActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/wallet_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的钱包"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+    </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical" 
+    android:background="@mipmap/wallet_bg"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/wallet_money"
+            android:layout_margin="10dp"
+             />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="我的总资产（元）" 
+            android:gravity="center_vertical"
+            android:textSize="@dimen/bigtextsize"
+            android:textColor="@color/zhutitle"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/wallet_zongzichan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/theme_color"
+        android:gravity="right"
+        android:layout_marginRight="10dp"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        >
+
+<!-- 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" > -->
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:layout_toLeftOf="@+id/wallet_tixian"
+                android:text="可提现金额"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/bigtextsize" />
+
+            <TextView
+                android:id="@+id/wallet_tixian"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/text_size" 
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                />
+
+
+<!--         </RelativeLayout>
+         -->
+    </LinearLayout>
+
+</LinearLayout>
+
+
+ 			<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_marginTop="1dp"
+                >
+
+                <zsj.com.oyk255.example.ouyiku.pagerslidingstrip.PagerSlidingTabStrip
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/wallet_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    app:pstsDividerColor="#eeeeee"
+                    app:pstsIndicatorColor="@color/theme_color" 
+                    app:pstsIndicatorHeight="1dp"
+                    app:pstsUnderlineHeight="1dp"
+                    app:pstsShouldExpand="true"
+                    app:pstsTabPaddingLeftRight="0dp"
+                    app:zmsTabTextColor="@color/zhutitle"
+                    app:zmsSelectedTabTextColor="@color/theme_color"
+                    app:zmsTabTextSize="15sp"
+                    app:zmsSelectedTabTextSize="15sp"
+                    />
+
+                    <android.support.v4.view.ViewPager
+       					 android:id="@+id/wallet_pages"
+     					 android:layout_width="match_parent"
+      				     android:layout_height="wrap_content" 
+      				     android:layout_below="@+id/wallet_tabs"
+      				     
+      				     >
+    				</android.support.v4.view.ViewPager>
+            </RelativeLayout>
+
+</LinearLayout>

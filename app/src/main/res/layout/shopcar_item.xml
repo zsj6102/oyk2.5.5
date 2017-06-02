@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+  
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp" 
+          android:background="#ffffff">
+
+            <CheckBox
+                    android:id="@+id/shopcar_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/pitch_radiogreen_selector"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                     />
+            
+
+        <ImageView
+            android:id="@+id/shopcar_img"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@mipmap/logo"
+            android:scaleType="fitXY"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:id="@+id/shopcar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:ellipsize="end"
+                 android:textColor="@color/zhutitle"
+                android:textSize="@dimen/goods_title"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/shopcar_attr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/smalltextsize" 
+                    android:textColor="@color/fuzhutitle"
+                    />
+
+                
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/shopcar_newprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="99.90" 
+                android:textSize="@dimen/goods_title"
+                android:textColor="@color/theme_color"
+                android:gravity="right"
+                />
+
+            <TextView
+                android:id="@+id/shopcar_oldprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="999.90"
+                android:gravity="right"
+                android:textSize="@dimen/smalltextsize"
+                 />
+
+<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="vertical"
+                 >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/delete_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/frame1" />
+
+                    <ImageView
+                        android:id="@+id/add_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/num"
+                        android:src="@mipmap/frame3" />
+
+                    <TextView
+                        android:id="@+id/num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/delete_num"
+                        android:background="@mipmap/frame2"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="@dimen/goods_title" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fuzhuxian"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp" 
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="小计：" 
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/zhutitle"
+            android:textSize="@dimen/bigtextsize"
+            />
+
+        <TextView
+            android:id="@+id/shopcar_totalmoney"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="0元" 
+            android:textColor="@color/theme_color"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="@dimen/bigtextsize"
+            />
+
+        <TextView
+            android:id="@+id/shopcar_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="结算" 
+            android:gravity="center"
+            android:layout_margin="6dp"
+            android:textSize="@dimen/mediumsize"
+            android:background="@drawable/button_bg"
+            android:textColor="#ffffff"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

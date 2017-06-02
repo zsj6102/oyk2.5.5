@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+     >
+    
+     <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" 
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/signcoupon_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/sign_youhui_layout"
+                        >
+
+                        <TextView
+                            android:id="@+id/signcoupon_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/sign"    
+                            android:textSize="@dimen/smalltextsize"   
+                            android:layout_marginLeft="5dp"               
+                             />
+
+                        <TextView
+                            android:id="@+id/sign_lingqu"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/mediumsize" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+    
+
+</LinearLayout>

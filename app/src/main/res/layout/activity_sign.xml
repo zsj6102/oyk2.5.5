@@ -1,0 +1,383 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.SignActivity" >
+    
+    <RelativeLayout
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="@dimen/title_height" 
+ 			    android:background="@color/title_color"
+ 			    android:id="@+id/title2"
+ 			    >
+
+               
+                    <RelativeLayout
+            android:id="@+id/back_sign"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/back" />
+
+        </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="签到有礼"
+                    android:textColor="#ffffff"
+                    android:textSize="22sp" />
+
+                <RelativeLayout
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/sign_gonglue"
+                     >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/raiders" />
+
+                </RelativeLayout>
+                
+ 			</RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/sign_topimg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/topimg_height"
+                android:src="@mipmap/logo"
+                android:scaleType="centerCrop"
+                
+                />
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#eeeeee"
+                />
+
+          
+            
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:background="#ffffff"
+                >
+                
+                  <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/qd_data_75"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="15dp"
+                 >
+                
+                
+
+                <TextView
+                    android:id="@+id/sign_lianxu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sign_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:text="已连续签到0天" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/mediumsize"
+                    />
+
+                <TextView
+                    android:id="@+id/sign_leiji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                      android:layout_centerHorizontal="true"
+                    android:layout_alignRight="@+id/sign_lianxu"
+                    android:layout_below="@+id/sign_lianxu"
+                    android:layout_marginTop="10dp"
+                    android:text="已累计签到0天" 
+                     android:textSize="@dimen/mediumsize"
+                       android:textColor="@color/zhutitle"
+                    />
+
+                <ImageView
+                    android:id="@+id/sign_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="38dp"
+                    android:src="@mipmap/no" />
+
+            </RelativeLayout>
+                
+            </LinearLayout>
+
+            <!-- <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" 
+                android:background="@drawable/white_bg"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" 
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/j" 
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:background="@drawable/qd_btnw"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/sign_youhui_layout"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:text="连续签到5天，领取10元代金劵" 
+                            android:textColor="@color/sign"    
+                            android:textSize="@dimen/smalltextsize"   
+                            android:layout_marginLeft="5dp"               
+                             />
+
+                        <TextView
+                            android:id="@+id/sign_lingqu"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center"
+                            android:text="领取"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/mediumsize" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+                
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" 
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView41"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/j_39" 
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:background="@drawable/qd_btnw"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/sign_youhui_layout2"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:text="连续签到5天，领取10元代金劵" 
+                            android:textColor="@color/sign"    
+                            android:textSize="@dimen/smalltextsize"   
+                            android:layout_marginLeft="5dp"               
+                             />
+
+                        <TextView
+                            android:id="@+id/sign_lingqu2"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center"
+                            android:text="领取"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/mediumsize" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" 
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView42"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/l" 
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:background="@drawable/qd_btnw"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/sign_youhui_layout2"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:text="连续签到5天，领取10元代金劵" 
+                            android:textColor="@color/sign"    
+                            android:textSize="@dimen/smalltextsize"   
+                            android:layout_marginLeft="5dp"               
+                             />
+
+                        <TextView
+                            android:id="@+id/sign_lingqu3"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center"
+                            android:text="领取"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/mediumsize" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" 
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView43"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/l" 
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" 
+                        android:background="@drawable/qd_btnw"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/sign_youhui_layout2"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:text="连续签到5天，领取10元代金劵" 
+                            android:textColor="@color/sign"    
+                            android:textSize="@dimen/smalltextsize"   
+                            android:layout_marginLeft="5dp"               
+                             />
+
+                        <TextView
+                            android:id="@+id/sign_lingqu4"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center"
+                            android:text="领取"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/mediumsize" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+                
+                
+                
+
+            </LinearLayout> -->
+
+            <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+                android:id="@+id/sign_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/white_bg"
+                android:divider="#00000000"
+                android:layout_marginTop="20dp"
+                 >
+            </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

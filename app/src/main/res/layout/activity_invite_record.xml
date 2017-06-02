@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.Invite_recordActivity" >
+
+<RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/inviterecord_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="邀请记录"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_size" />
+
+    </RelativeLayout>
+
+		<LinearLayout
+  		  android:layout_width="match_parent"
+  		  android:layout_height="45dp" >
+
+			<TextView
+			    android:id="@+id/textView2"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:text="邀请好友" 
+			    android:layout_weight="1"
+			    android:gravity="center"
+			    android:textColor="@color/zhutitle"
+			     android:textSize="@dimen/bigtextsize"
+			    />
+
+			<TextView
+			    android:id="@+id/textView3"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:text="赠送金额"
+			     android:layout_weight="1"
+			     android:gravity="center"
+			     android:textColor="@color/zhutitle"
+			      android:textSize="@dimen/bigtextsize"
+			     />
+
+			<TextView
+			    android:id="@+id/textView4"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:text="时间"
+			     android:layout_weight="1"
+			     android:gravity="center"
+			     android:textSize="@dimen/bigtextsize"
+			     android:textColor="@color/zhutitle"
+			     />
+		    
+		</LinearLayout>
+		<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="1dp"
+		    android:background="@color/fuzhuxian"
+		    android:layout_marginLeft="10dp"
+		    android:layout_marginRight="10dp"
+		    />
+
+		<ListView
+		    android:id="@+id/inviterecord_listView"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent" >
+		</ListView>
+
+</LinearLayout>

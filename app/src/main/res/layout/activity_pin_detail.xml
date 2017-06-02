@@ -1,0 +1,180 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.PinDetailActivity"
+    android:background="#ffffff"
+     >
+     
+    <LinearLayout
+        android:id="@+id/hotnetred_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/pintuandetail_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pintuandetail_titlename"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="商品详情"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+        <RelativeLayout
+            android:id="@+id/pintuandetail_share"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" 
+            android:visibility="invisible"
+            >
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/share_whrite" />
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <zsj.com.oyk255.example.ouyiku.draglayout.DragLayout
+        android:id="@+id/draglayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <FrameLayout
+            android:id="@+id/first"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <FrameLayout
+            android:id="@+id/second"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </zsj.com.oyk255.example.ouyiku.draglayout.DragLayout>
+    
+    	 <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fuzhuxian" />
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                 >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" 
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/delete_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/frame1" />
+
+                    <ImageView
+                        android:id="@+id/add_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/num"
+                        android:src="@mipmap/frame3" />
+
+                    <TextView
+                        android:id="@+id/num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/delete_num"
+                        android:background="@mipmap/frame2"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="@dimen/goods_title" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:background="@drawable/single_buy_bg"
+            android:layout_margin="5dp"
+            android:id="@+id/pintuandetail_singlebuy"
+            >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="单独购买" 
+                android:textSize="@dimen/smalltextsize"
+                android:textColor="#f01414"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                />
+
+            <TextView
+                android:id="@+id/pintuandetail_singlemoney"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:textColor="#f01414"
+                android:gravity="center"
+                 android:textSize="@dimen/smalltextsize"
+                 />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/pintuandetail_kaituan"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:text="立刻开团" 
+            android:background="@drawable/pin_kaituan_bg"
+            android:gravity="center"
+            android:textSize="@dimen/mediumsize"
+            android:textColor="#ffffff"
+            android:layout_margin="5dp"
+            
+            />
+        
+    </LinearLayout>
+    
+    
+    
+    
+
+</LinearLayout>

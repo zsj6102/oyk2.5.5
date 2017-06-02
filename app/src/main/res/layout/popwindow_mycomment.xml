@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00000000"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+         android:layout_marginTop="100dp"
+        android:background="#eeeeee"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="100dp"
+        >
+        
+        	<ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_weight="1"
+        android:background="#ffffff"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/pop_comment_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:textSize="@dimen/mediumsize"
+                android:textColor="@color/zhutitle"
+                android:lineSpacingExtra="4dp"
+                />
+
+            
+        </LinearLayout>
+    </ScrollView>
+        
+         <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/pop_comment_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dp"
+                        android:text="返回"
+                        android:textColor="@color/zhutitle"
+                        android:textSize="@dimen/mediumsize" 
+                        android:gravity="center"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        
+        
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="vertical" 
+        android:layout_margin="5dp"
+        >
+		<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="0.5dp"
+		    android:background="@color/fuzhuxian"
+		    
+		    />
+
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		     >
+		    
+		    <View 
+		        android:layout_width="0.5dp"
+		        android:layout_height="match_parent"
+		        android:background="@color/fuzhuxian"
+		        />
+
+		    <RelativeLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="match_parent"
+		         android:layout_marginLeft="10dp"
+		         android:layout_marginRight="10dp"
+		         >
+
+		        <ImageView
+		            android:id="@+id/imageView1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="match_parent"
+		            android:src="@mipmap/hb_bg"
+		           
+		            />
+
+		        <TextView
+		            android:id="@+id/item_coupon_money"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true"
+		            android:layout_centerVertical="true"
+		            android:textColor="@color/coupon_money"
+		            android:text="10.00"
+		            android:textSize="@dimen/coupon_moneysize" />
+
+		        <TextView
+		            android:id="@+id/textView2"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentLeft="true"
+		            android:layout_below="@+id/item_coupon_money"
+		            android:text="￥"
+		            android:textColor="@color/coupon_money"
+		            android:textSize="@dimen/mediumsize"
+		             />
+
+		    </RelativeLayout>
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:orientation="vertical" 
+		        android:layout_weight="1"
+		        android:layout_marginRight="10dp"
+		        >
+		        
+		            
+		              <TextView
+		            android:id="@+id/coupon_title"
+		             android:layout_marginTop="20dp"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:textColor="@color/zhutitle"
+		            android:textSize="@dimen/hb_title"
+		            android:lines="2"
+		            android:text="少时诵诗书是"
+		             />
+		            
+
+		      
+
+		        <TextView
+		            android:id="@+id/coupon_time"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:textSize="@dimen/smalltextsize"
+		            android:textColor="@color/theme_color"
+		             android:text="少时诵诗书是"
+		             android:lines="1"
+		            />
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent" 
+		            android:gravity="center"
+		            >
+
+		            <TextView
+		                android:id="@+id/coupon_manjian"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:textSize="@dimen/smalltextsize"
+		                android:textColor="@color/fuzhutitle"
+		                android:layout_weight="1"
+		                 android:text="少时诵诗书是"
+		                />
+
+		            <TextView
+		                android:id="@+id/touse"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="去使用 >>" 
+		                android:textSize="@dimen/smalltextsize"
+		                android:textColor="@color/fuzhutitle"
+		                />
+
+		        </LinearLayout>
+
+		        
+
+		    </LinearLayout>
+
+		    <View
+		        android:layout_width="0.5dp"
+		        android:layout_height="match_parent"
+		        android:background="@color/fuzhuxian"
+		        />
+		    
+		</LinearLayout>
+
+	<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="0.5dp"
+		    android:background="@color/fuzhuxian"
+		    
+		    />
+
+    </LinearLayout>
+    
+    
+
+</LinearLayout>

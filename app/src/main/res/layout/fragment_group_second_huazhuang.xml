@@ -1,0 +1,20 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+     android:id="@id/id_stickynavlayout_innerscrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:scrollbars="none"
+    tools:context="zsj.com.oyk255.example.ouyiku.fragment.Group_second_huazhuangFragment" >
+
+    <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+        android1:id="@+id/group_second_meizhuang_listview"
+        android1:layout_width="match_parent"
+        android1:layout_height="match_parent" 
+        android:focusable="false"
+        android:divider="#00000000"
+        >
+    </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+
+</ScrollView>

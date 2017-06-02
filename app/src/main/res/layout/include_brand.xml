@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        >
+
+        <ImageView
+            android:id="@+id/order_goods_img"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@mipmap/logo"
+            android:layout_margin="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/order_goods_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView社区为单位的是是是是大师兄我问问是是是是是是王菲王菲为我的" 
+                android:layout_marginTop="10dp"
+                android:lines="2"
+                android:ellipsize="end"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/mediumsize"
+                android:textColor="@color/zhutitle"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp" >
+                
+                <TextView
+                android:id="@+id/order_goods_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="红色" 
+                android:textSize="@dimen/smalltextsize"
+                android:textColor="@color/fuzhutitle"
+                android:layout_marginTop="5dp"
+                />
+
+                <TextView
+                    android:id="@+id/order_goods_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ML" 
+                    android:textSize="@dimen/smalltextsize"
+               	    android:textColor="@color/fuzhutitle"
+             	    android:layout_marginTop="5dp"
+             	    android:layout_marginLeft="5dp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/order_goods_newprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="99.00" 
+                android:textSize="@dimen/bigtextsize"
+                android:textColor="@color/zhutitle"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:id="@+id/order_goods_oldprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="999.00" 
+                android:textSize="@dimen/smalltextsize"
+               	android:textColor="@color/fuzhutitle"
+               	android:gravity="right"
+               	android:layout_marginRight="10dp"
+                />
+            <TextView
+                android:id="@+id/order_goods_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="x1"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/smalltextsize"
+               	android:textColor="@color/fuzhutitle"
+                 />
+
+        </LinearLayout>
+        
+
+    </LinearLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.SaleAfter_ingActivity" >
+    
+    <RelativeLayout
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="48dp" 
+ 			    android:background="@color/title_color"
+ 			    android:id="@+id/title2"
+ 			    >
+
+               
+                    <RelativeLayout
+            android:id="@+id/back_saleing"
+            android:layout_width="48dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/saleing_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="申请中"
+                    android:textColor="#ffffff"
+                    android:textSize="22sp" />
+                
+ 			</RelativeLayout>
+ 			
+      <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include layout="@layout/refresh_head" />
+
+    <zsj.com.oyk255.example.ouyiku.pullableview.PullableListView
+        android:id="@+id/saleing_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </zsj.com.oyk255.example.ouyiku.pullableview.PullableListView>
+    
+      <include layout="@layout/load_more" />
+
+</zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
+
+</LinearLayout>

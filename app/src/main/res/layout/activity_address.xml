@@ -1,0 +1,286 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/address_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.AddressActivity"
+    
+    >
+
+    <RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/address_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="编辑地址"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:id="@+id/address_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:text="删除"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="@dimen/bigtextsize" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" 
+                android:background="#ffffff"
+                >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="收货人"
+                    android:gravity="center"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <EditText
+                    android:id="@+id/address_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10" 
+                    android:background="@null"
+                    android:hint="请输入姓名"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_marginLeft="40dp"
+                    android:textColor="@color/zhutitle"
+                    android:textColorHint="@color/zhutitle"
+                    >
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                 >
+                
+                 <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="手机号码"
+                    android:gravity="center"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <EditText
+                    android:id="@+id/address_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10" 
+                    android:background="@null"
+                    android:hint="请输入联系方式"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_marginLeft="20dp"
+                    android:inputType="number"
+                    android:textColor="@color/zhutitle"
+                    android:textColorHint="@color/zhutitle"
+                    >
+
+                   
+                </EditText>
+            </LinearLayout>
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                />
+             
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" 
+                android:background="#ffffff"
+                >
+                
+                 <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="收货地址"
+                    android:gravity="center"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <TextView
+                    android:id="@+id/address_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="请选择城市位置"
+                    android:textSize="@dimen/mediumsize"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/zhutitle"
+                     />
+
+                   
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/address_select"
+                    android:layout_marginRight="10dp"
+                     />
+                
+            </LinearLayout>
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                />
+             
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                 >
+                
+                 <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="详细地址"
+                    android:gravity="center"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                <EditText
+                    android:id="@+id/address_detailaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10" 
+                    android:background="@null"
+                    android:hint="请输入详细地址"
+                    android:textSize="@dimen/mediumsize"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/zhutitle"
+                    android:textColorHint="@color/zhutitle"
+                    >
+
+                   
+                </EditText>
+            </LinearLayout>
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                />
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                 >
+                
+                 <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="设为默认"
+                    android:gravity="center"
+                    android:textSize="@dimen/bigtextsize"
+                    android:layout_marginLeft="10dp"
+                     />
+
+                 <RelativeLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent" >
+
+
+                     <zsj.com.oyk255.example.ouyiku.view.SwitchButton
+                         android:id="@+id/address_switchbutton"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_centerVertical="true"
+                         android:layout_alignParentRight="true"
+                         android:layout_marginRight="10dp"
+                          />
+
+                 </RelativeLayout>
+               
+            </LinearLayout>
+             
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#999999"
+                />
+
+            
+            <TextView
+		    android:id="@+id/address_sure"
+		    android:layout_width="match_parent"
+		    android:layout_height="50dp"
+		    android:text="确定" 
+		    android:textSize="20sp"
+		    android:textColor="#ffffff"
+		    android:background="@drawable/button_bg"
+		     android:gravity="center"
+		    android:layout_margin="10dp"
+		    />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

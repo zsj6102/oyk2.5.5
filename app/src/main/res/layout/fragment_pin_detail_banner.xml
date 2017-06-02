@@ -1,0 +1,33 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.PinDetailBannerFragment" >
+
+     <ImageView
+        android:id="@+id/goods_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+         />
+
+    <ImageView
+        android:id="@+id/pintuan_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/tuan_bg"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/pintuan_totalpeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/mediumsize"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="2dp"
+        />
+
+</FrameLayout>

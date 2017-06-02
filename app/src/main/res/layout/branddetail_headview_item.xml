@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff"
+    >
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp" >
+
+            <ImageView
+                android:id="@+id/brand_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                 />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="#b0000000" />
+
+            <ImageView
+                android:id="@+id/brand_logo"
+                android:layout_width="96dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/view1"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/brand_logo" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/branddetail_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/mediumsize"
+                        android:layout_marginTop="5dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/branddetail_goodsnum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                         android:textColor="#ffffff"
+                        android:textSize="@dimen/smalltextsize"
+                        android:layout_marginTop="2dp"
+                         />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/branddetail_collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/collect_w"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="vertical" 
+            android:background="#eeeeee"
+            >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="新品上市" 
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+            	android:textColor="@color/zhutitle"
+            	android:textSize="@dimen/bigtextsize"
+                />
+            
+
+        </LinearLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fuzhuxian"
+            />
+
+        <zsj.com.oyk255.example.ouyiku.view.HorizontalListView
+            android:id="@+id/brand_horizontallistview"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+             >
+
+        </zsj.com.oyk255.example.ouyiku.view.HorizontalListView>
+
+          <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fuzhuxian"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="vertical" 
+            android:background="#eeeeee"
+            android:id="@+id/allgoods"
+            >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="全部商品" 
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+            	android:textColor="@color/zhutitle"
+            	android:textSize="@dimen/bigtextsize"
+                />
+            
+
+        </LinearLayout>
+        
+        
+          <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fuzhuxian"
+            />
+    </LinearLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,137 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.SendCommentActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/sendcomment_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="发表评论"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp" >
+
+        <ImageView
+            android:id="@+id/send_comment_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/logo" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <RadioButton
+                android:id="@+id/radio_good"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:text="好评"
+                android:layout_margin="10dp"
+                android:textColor="@color/zhutitle"
+                android:button="@drawable/pitch_radiogreen_selector"
+                android:padding="6dp"
+                 />
+
+            <RadioButton
+                android:id="@+id/radio_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="中评"
+                android:layout_margin="10dp"
+                android:textColor="@color/zhutitle"
+                android:button="@drawable/pitch_radiogreen_selector"
+                android:padding="6dp"
+                 />
+
+            <RadioButton
+                android:id="@+id/radio_bad"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="差评" 
+                android:layout_margin="10dp"
+                android:textColor="@color/zhutitle"
+                android:button="@drawable/pitch_radiogreen_selector"
+                android:padding="6dp"
+                />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/fuzhuxian" />
+
+    <EditText
+		    android:id="@+id/sendcomment_edt"
+		    android:layout_width="match_parent"
+		    android:layout_height="125dp"
+		    android:ems="10" 
+		    android:background="#ffffff"
+		    android:textSize="15sp"
+		    android:gravity="left|top"
+		    android:paddingLeft="10dp"
+		    android:hint="请谈谈您对该宝贝的看法，可以给其他小伙伴们提供参考"
+		    >
+
+		    <requestFocus />
+		</EditText>
+	<View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/fuzhuxian" />
+	
+	<TextView
+		    android:id="@+id/sendcomment_send"
+		    android:layout_width="match_parent"
+		    android:layout_height="50dp"
+		    android:text="发表评论" 
+		    android:textSize="20sp"
+		    android:textColor="#ffffff"
+		    android:background="@drawable/button_bg"
+		    android:gravity="center"
+		    android:layout_margin="15dp"
+		    />
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="horizontal" >
+
+	<zsj.com.oyk255.example.ouyiku.wuliuline.CustomNodeLineView
+        android:id="@+id/nodeLineView"
+        android:layout_width="60dp"
+        android:layout_height="match_parent" 
+       android:background="#ffffff"
+        
+        />
+	
+	
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:dividerHeight="0.5dp"
+        android:cacheColorHint="#000000"
+        android:divider="#D8D8D8" >
+    </ListView>
+
+    
+</LinearLayout>

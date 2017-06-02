@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#00000000"
+    >
+   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:layout_alignParentBottom="true"
+            android:id="@+id/pop_layout"
+            android:background="#ffffff"
+            
+            >
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fuzhuxian"
+                />
+             <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/popwindow_img"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@mipmap/logo"
+             />
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+             android:layout_marginLeft="10dp"
+             >
+            
+            <TextView
+                android:id="@+id/popwindow_goodsinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/zhutitle"
+                android:lines="2"
+                android:ellipsize="end"
+                android:textSize="@dimen/mediumsize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                
+                >
+
+                <TextView
+                    android:id="@+id/popwindow_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/bigtextsize"
+                    android:textColor="@color/theme_color"
+                    />
+
+                <TextView
+                    android:id="@+id/popwindow_inventory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                     android:textSize="@dimen/mediumsize"
+                     android:gravity="right|center"
+                     android:textColor="@color/fuzhutitle"
+                    />
+
+            </LinearLayout>
+ 
+        </LinearLayout>
+
+    </LinearLayout> 
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fuzhuxian"
+        
+        />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="260dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+           <!--  <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp" >
+
+                <TextView
+                    android:id="@+id/popwindow_1_zhonglei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="尺码"
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/mediumsize" />
+
+                
+            </LinearLayout>
+
+            <zsj.com.oyk255.example.ouyiku.view.MyGridView
+                android:id="@+id/popwindow_1_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4" 
+                android:cacheColorHint="#00000000"
+                android:horizontalSpacing="5dp"
+                android:listSelector="#00000000"
+                android:verticalSpacing="5dp"
+                android:layout_marginTop="5dp"
+                >
+            </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:id="@+id/popwindow_2_zhonglei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="颜色"
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/mediumsize" />
+
+                
+            </LinearLayout>
+
+            <zsj.com.oyk255.example.ouyiku.view.MyGridView
+                android:id="@+id/popwindow_2_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4" 
+                android:cacheColorHint="#00000000"
+                android:horizontalSpacing="5dp"
+                android:listSelector="#00000000"
+                android:verticalSpacing="5dp"
+                android:layout_marginTop="5dp"
+                >
+            </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:id="@+id/popwindow_3_zhonglei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="其他"
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/mediumsize" />
+
+                
+            </LinearLayout>
+
+            <zsj.com.oyk255.example.ouyiku.view.MyGridView
+                android:id="@+id/popwindow_3_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4" 
+                android:cacheColorHint="#00000000"
+                android:horizontalSpacing="5dp"
+                android:listSelector="#00000000"
+                android:verticalSpacing="5dp"
+                android:layout_marginTop="5dp"
+                >
+            </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:id="@+id/popwindow_4_zhonglei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="其他2"
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/mediumsize" />
+
+                
+            </LinearLayout>
+
+            <zsj.com.oyk255.example.ouyiku.view.MyGridView
+                android:id="@+id/popwindow_4_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4" 
+                android:cacheColorHint="#00000000"
+                android:horizontalSpacing="5dp"
+                android:listSelector="#00000000"
+                android:verticalSpacing="5dp"
+                android:layout_marginTop="5dp"
+                >
+            </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+            
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:id="@+id/popwindowshuliang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="4dp"
+                    android:text="购买数量"
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/mediumsize" />
+
+                
+            </LinearLayout>
+            
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                >
+                
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/detail_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/detail_delete"
+                        android:background="@drawable/frame2"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="01"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/detail_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/detail_num"
+                        android:src="@drawable/frame3" />
+
+                    <ImageView
+                        android:id="@+id/detail_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/frame1" />
+                </RelativeLayout>
+            </LinearLayout> -->
+            
+            
+            <!-- <TextView
+                android:id="@+id/detail_pop_shuxingname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="颜色"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/bigtextsize"
+                android:layout_margin="10dp"
+                 /> -->
+
+            <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+                android:id="@+id/detail_pop_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+
+            <TextView
+                android:id="@+id/goumaishuxiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="购买数量"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/bigtextsize"
+                android:layout_margin="10dp"
+                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"
+                 >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/delete_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/frame1" />
+
+                    
+                    <TextView 
+                        android:id="@+id/num"
+                        android:layout_width="wrap_content"
+                       	android:layout_height="wrap_content"
+                        android:background="@mipmap/frame2"
+                         android:layout_toRightOf="@+id/delete_num"
+                         android:layout_alignParentTop="true"
+                         android:text="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/mediumsize"
+                        />
+
+                    <ImageView
+                        android:id="@+id/add_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/num"
+                        android:src="@mipmap/frame3" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+				
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+		    android:id="@+id/pop_buyorshopcar"
+		    android:layout_width="match_parent"
+		    android:layout_height="45dp"
+		    android:text="立即购买" 
+		    android:textSize="20sp"
+		    android:textColor="#ffffff"
+		    android:background="@drawable/button_bg"
+		     android:gravity="center"
+		    android:layout_margin="15dp"
+		    />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

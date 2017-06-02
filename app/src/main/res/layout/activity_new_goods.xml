@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.NewGoodsActivity"
+    android:background="#ffffff"
+     >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            
+            <RelativeLayout
+            android:id="@+id/news_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="最新单品"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/title_size" />
+            
+        </RelativeLayout>
+'
+    </LinearLayout>
+    <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                >
+
+                <zsj.com.oyk255.example.ouyiku.pagerslidingstrip.PagerSlidingTabStrip
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/news_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    app:pstsDividerColor="#eeeeee"
+                    app:pstsIndicatorColor="@color/theme_color" 
+                    app:pstsIndicatorHeight="1dp"
+                    app:pstsUnderlineHeight="1dp"
+                    app:pstsShouldExpand="true"
+                    app:zmsTabTextColor="@color/zhutitle"
+                    app:zmsSelectedTabTextColor="@color/theme_color"
+                    app:zmsTabTextSize="15sp"
+                    app:zmsSelectedTabTextSize="15sp"
+                    />
+
+                    <android.support.v4.view.ViewPager
+       					 android:id="@+id/news_pages"
+     					 android:layout_width="match_parent"
+      				     android:layout_height="wrap_content" 
+      				     android:layout_below="@+id/news_tabs"
+      				     
+      				     >
+    				</android.support.v4.view.ViewPager>
+            </RelativeLayout>
+    	
+</LinearLayout>

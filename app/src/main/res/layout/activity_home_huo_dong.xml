@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homehuodonglayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.HomeHuoDongActivity"
+    android:background="#ffffff"
+     >
+     <zsj.com.oyk255.example.ouyiku.view.HorizontalProgressBarWithNumber
+        android:id="@+id/huodongProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <WebView
+        android:id="@+id/huodongwebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    
+
+</LinearLayout>

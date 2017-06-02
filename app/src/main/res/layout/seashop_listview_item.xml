@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee"
+     >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+         >
+
+        <ImageView
+            android:id="@+id/seashop_backgound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/seashaopbackgroup"
+			android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/seashop_textimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp"
+            />
+        
+    </RelativeLayout>
+
+    <zsj.com.oyk255.example.ouyiku.view.MyGridView
+        android:id="@+id/seashopitem_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:horizontalSpacing="5dp"
+       	android:verticalSpacing="5dp"
+        android:background="#eeeeee"
+         >
+    </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+
+</LinearLayout>

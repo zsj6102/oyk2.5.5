@@ -1,0 +1,390 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res"
+    android:id="@+id/cantuanlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.CanTuanDetailActivity"
+     android:background="#eeeeee"
+     >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height" 
+        android:background="@color/title_color"
+        >
+
+        <RelativeLayout
+            android:id="@+id/cantuan_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="参团详情"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_size" />
+
+        <RelativeLayout
+            android:id="@+id/cantuandetail_share"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" >
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/share_whrite" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    
+     <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:layout_weight="1"
+     >
+
+    <include layout="@layout/refresh_head" />
+    <!-- 支持所有实现Pullable接口的View -->
+
+    <zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView
+        android:id="@+id/cantuan_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+       
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="#ffffff"
+                android:id="@+id/todetail"
+                 >
+
+                <ImageView
+                    android:id="@+id/cantuan_goodsimg"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@mipmap/logo"
+                    android:layout_margin="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" 
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/cantuan_goodsname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/zhutitle"
+                        android:textSize="@dimen/goods_title"
+                        android:lines="2"
+                        android:ellipsize="end"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" 
+                        android:layout_marginBottom="10dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/cantuan_people"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/goods_title"
+                            android:textColor="@color/zhutitle"
+                            android:gravity="bottom"
+                            />
+
+                        <TextView
+                            android:id="@+id/cantuan_goodsprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/pintuanprice"
+                            android:textColor="@color/theme_color"
+                            android:gravity="bottom"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                
+            </LinearLayout>
+
+            <zsj.com.oyk255.example.ouyiku.view.MyGridView
+                android:id="@+id/cantuan_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="4" 
+                android:background="#eeeeee"
+                android:listSelector="#00000000"
+                >
+            </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+
+            <TextView
+                android:id="@+id/cantuan_cha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/mediumsize"
+                android:textColor="@color/theme_color"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="20dp"
+                android:id="@+id/cantuan_daojishi"
+                >
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="剩余"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:layout_marginRight="10dp"
+                     />
+
+                <TextView
+                    android:id="@+id/cantuan_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mediumsize"
+                    android:textColor="@color/zhutitle"
+                    android:gravity="center"
+                     />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="结束"
+                     android:layout_weight="1"
+                     android:gravity="center|left"
+                     android:layout_marginLeft="10dp"
+                     />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                   android:background="#ffffff"
+                
+                 >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                 
+                    >
+
+                    <zsj.com.oyk255.example.ouyiku.view.CircleImageView
+                        android:id="@+id/cantuan_tuanzhang_pic"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/logo"
+                        app:border_color="#00000000" 
+                        />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/cantuan_tuanzhang_pic"
+                        android:layout_alignLeft="@+id/cantuan_tuanzhang_pic"
+                        android:layout_marginLeft="25dp"
+                        android:background="@drawable/button_cantuan_bg"
+                        android:text="团长"
+                        android:textSize="10sp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="#ffffff"
+                         />
+
+                    <TextView
+                        android:id="@+id/cantuan_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/zhutitle"
+                        android:textSize="@dimen/mediumsize"
+                        
+                        />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/cantuan_year"
+                        android:layout_alignBottom="@+id/cantuan_year"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:text="开团"
+                        android:textColor="@color/zhutitle"
+                        android:textSize="@dimen/mediumsize" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="大家都在团" 
+                    android:textColor="@color/zhutitle"
+                    android:textSize="@dimen/mediumsize"
+                    android:gravity="center"
+                    
+                    />
+                
+            </LinearLayout>
+
+            <zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView
+                android:id="@+id/cantuan_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:divider="#eeeeee"
+       			android:dividerHeight="10dp"
+                 >
+            </zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView>
+            
+        </LinearLayout>
+    </zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView>
+    
+    <include layout="@layout/load_more" />
+
+</zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:id="@+id/cantuan_bottom"
+         >
+        
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fuzhuxian"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/cantuan_more"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/more_pin"
+                />
+
+            <ImageView
+                android:id="@+id/cantuan_join"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/liji_buy"
+                />
+
+            <TextView
+                android:id="@+id/pin_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/cantuan_more"
+                android:text="拼团码:"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/mediumsize"
+                android:visibility="gone"
+                 />
+
+            <TextView
+                android:id="@+id/pin_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/pin_tv"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/bigtextsize"
+                android:text="sssswwqqd"
+                android:layout_marginLeft="4dp"
+                android:visibility="gone"
+                />
+
+        </RelativeLayout>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </LinearLayout>
+
+</LinearLayout>

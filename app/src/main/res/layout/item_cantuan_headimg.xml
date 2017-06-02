@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+             >
+
+            <zsj.com.oyk255.example.ouyiku.view.CircleImageView
+                android:id="@+id/item_cantuan_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/logo"
+                app:border_color="#00000000" />
+
+           
+
+        </RelativeLayout>
+        
+         <TextView
+                android:id="@+id/item_cantuan_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="团长" 
+                android:gravity="center"
+                android:textColor="@color/zhutitle"
+                android:textSize="@dimen/goods_title"
+                />
+        
+        
+
+    </LinearLayout>
+
+</LinearLayout>
