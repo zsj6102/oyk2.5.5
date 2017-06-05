@@ -9,10 +9,13 @@ import com.google.gson.Gson;
 
 import com.tencent.connect.share.QQShare;
 import com.tencent.connect.share.QzoneShare;
+import com.tencent.mm.sdk.modelbase.BaseReq;
+import com.tencent.mm.sdk.modelbase.BaseResp;
 import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.open.utils.ThreadManager;
 import com.tencent.tauth.IUiListener;
@@ -32,6 +35,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.widget.Toast;
 
 import zsj.com.oyk255.R;
 import zsj.com.oyk255.example.ouyiku.detail.popwindow.Share_pop;
@@ -44,18 +48,18 @@ import zsj.com.oyk255.example.ouyiku.utils.PhotoUtil;
 import zsj.com.oyk255.suiyuchen.HTTPUtils;
 import zsj.com.oyk255.suiyuchen.VolleyListener;
 
-public class NewsPeopleDetailActivity extends FragmentActivity implements OnClickListener{
+public class NewsPeopleDetailActivity extends FragmentActivity implements IWXAPIEventHandler,OnClickListener{
 
 	private DetailTopFragment detailTopFragment;
 	private DetailBottomFragment detailBottomFragment;
 	InputMethodManager im;
 	private String productId;
 	private String phone1;
-	
+
 	private String userid;//用户id
 	private String token;//用户token
 	private SharedPreferences sp;
-	
+
 	private IWXAPI api;
 	private static final String APP_ID=Constant.APPID.WXAPPID;
 	private static final String APP_QQID= Constant.APPID.QQAPPID;
@@ -68,8 +72,8 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 		api = WXAPIFactory.createWXAPI(this, APP_ID, false);
 		api.registerApp(APP_ID);
 	    mTencent = Tencent.createInstance(APP_QQID, this.getApplicationContext());
-	    
-	    
+
+
 		PushAgent.getInstance(this).onAppStart();
 		im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		if (savedInstanceState == null) {
@@ -85,7 +89,7 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 		initUI();
 		GetIsBuy();//获取数据
 		//子线程执行获取分享要用的图片
-		
+
 	}
 
 	private String isbuy;
@@ -107,7 +111,7 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 		map.put("product_id", productId);
 		map.put("user_id", userid);
 		HTTPUtils.post(this, url, map, new VolleyListener() {
-			
+
 
 
 
@@ -127,24 +131,24 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 					Log.e("productId", productId);
 				}
 			}
-			
+
 			@Override
 			public void onErrorResponse(VolleyError arg0) {
-				
+
 			}
 		});
-		
+
 	}
 
 
 	private void initUI() {
 		detailTopFragment = new DetailTopFragment(productId);
 		detailBottomFragment = new DetailBottomFragment(productId);
-		
+
 		getSupportFragmentManager().beginTransaction()
 		.add(R.id.first, detailTopFragment).add(R.id.second, detailBottomFragment)
 		.commit();
-		
+
 		DragLayout.ShowNextPageNotifier nextIntf = new DragLayout.ShowNextPageNotifier() {
 			@Override
 			public void onDragNext() {
@@ -153,13 +157,13 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 		};
 		DragLayout draglayout = (DragLayout) findViewById(R.id.draglayout);
 		draglayout.setNextPageListener(nextIntf);
-		
+
 		findViewById(R.id.ninedetail_back).setOnClickListener(this);
 		findViewById(R.id.ninedetail_buy).setOnClickListener(this);
 		findViewById(R.id.ninedetail_share).setOnClickListener(this);
 		share_pop = new Share_pop(this);
 	}
-	
+
 	@Override
 	public void finish() {
 		hideSoftInput();
@@ -184,11 +188,11 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 			finish();
 			break;
 		case R.id.ninedetail_share:
-			
+
 			//分享
 			share_pop.showAtLocation(findViewById(R.id.newpeoplelayout), Gravity.CENTER, 0, 0);
 			share_pop.view.findViewById(R.id.iv_share_wx3).setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					new Thread(new Runnable(){
@@ -200,12 +204,12 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 							api.sendReq(createReq(false,thumb));
 			            }
 			        }).start();
-					
+
 				}
 			});
-			
+
 			share_pop.view.findViewById(R.id.iv_share_pyq3).setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					new Thread(new Runnable(){
@@ -217,29 +221,29 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 							api.sendReq(createReq(true,thumb));
 			            }
 			        }).start();
-					
+
 				}
 			});
-			
+
 			share_pop.view.findViewById(R.id.iv_share_qq).setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					share();
-					
+
 				}
 			});
-			
+
 			share_pop.view.findViewById(R.id.iv_share_qqzong).setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					ShareQQZone();
-					
+
 				}
 			});
-			
-			
+
+
 			break;
 		case R.id.ninedetail_buy:
 			if(!userid.equals("")){
@@ -257,7 +261,7 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 //				else  if(isbuy.equals("4")){
 //					Toast.makeText(NewsPeopleDetailActivity.this, "活动已结束", Toast.LENGTH_SHORT).show();
 //				}
-				
+
 			}else{
 				startActivity(new Intent(this, LoginActivity.class));
 			}
@@ -266,11 +270,11 @@ public class NewsPeopleDetailActivity extends FragmentActivity implements OnClic
 		default:
 			break;
 		}
-		
+
 	}
-	
+
 public SendMessageToWX.Req createReq(boolean timeLine,Bitmap thumb) {
-		
+
     	WXWebpageObject webpage = new WXWebpageObject();
 		webpage.webpageUrl = shareUrl;
 		final WXMediaMessage msg = new WXMediaMessage(webpage);
@@ -286,7 +290,7 @@ public SendMessageToWX.Req createReq(boolean timeLine,Bitmap thumb) {
 				msg.thumbData = PhotoUtil.bmpToByteArray(thumb, true);
 //            }
 //        }).start();
-		
+
 		SendMessageToWX.Req req = new SendMessageToWX.Req();
 		req.transaction = buildTransaction("webpage");
 		req.message = msg;
@@ -297,8 +301,8 @@ public SendMessageToWX.Req createReq(boolean timeLine,Bitmap thumb) {
 	 private String buildTransaction(final String type) {
 			return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
 		}
-	 
-	 
+
+
 	//分享QQ
 		public void share()
 		{
@@ -318,10 +322,10 @@ public SendMessageToWX.Req createReq(boolean timeLine,Bitmap thumb) {
 
 		mTencent.shareToQQ(this, bundle , qqShareListener);
 		}
-		
+
 //		 private int shareType = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;
 		 private int shareType = QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT;
-		 
+
 		 //分享QQ空间
 		 public void ShareQQZone(){
 			 Bundle params = new Bundle();
@@ -333,12 +337,12 @@ public SendMessageToWX.Req createReq(boolean timeLine,Bitmap thumb) {
 				//分享的标题。注：PARAM_TITLE、PARAM_IMAGE_URL、PARAM_	SUMMARY不能全为空，最少必须有一个是有值的。
 //				bundle.putString(QzoneShare.SHARE_TO_QQ_TITLE, data.getTitle());
 //				//分享的图片URL
-			  
+
 			  params.putStringArrayList(QzoneShare.SHARE_TO_QQ_IMAGE_URL, mBannerData);
 				doShareToQzone(params);
-				
+
 		 }
-		
+
 		IUiListener qqShareListener = new IUiListener() {
 	        @Override
 	        public void onCancel() {
@@ -364,7 +368,7 @@ public SendMessageToWX.Req createReq(boolean timeLine,Bitmap thumb) {
 	    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    Tencent.onActivityResultData(requestCode,resultCode,data,qqShareListener);
 	    }
-		
+
 	    private void doShareToQzone(final Bundle params) {
 	        // QZone分享要在主线程做
 	        ThreadManager.getMainHandler().post(new Runnable() {
@@ -377,7 +381,32 @@ public SendMessageToWX.Req createReq(boolean timeLine,Bitmap thumb) {
 	            }
 	        });
 	    }
-	 
-	
 
+
+	@Override
+	public void onReq(BaseReq baseReq) {
+
+	}
+
+	@Override
+	public void onResp(BaseResp baseResp) {
+		String result;
+		switch (baseResp.errCode) {
+			case BaseResp.ErrCode.ERR_OK:
+				result = "分享成功";
+				break;
+			case BaseResp.ErrCode.ERR_USER_CANCEL:
+				result = "取消分享";
+				break;
+			case BaseResp.ErrCode.ERR_AUTH_DENIED:
+				result = "分享被拒绝";
+				break;
+			default:
+				result = "发送返回";
+				break;
+		}
+		Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+
+
+	}
 }

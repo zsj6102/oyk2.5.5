@@ -5,48 +5,57 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    tools:context="zsj.com.oyk255.example.ouyiku.v1.PhoneChongzhiActivity" >
+    tools:context="zsj.com.oyk255.example.ouyiku.v1.PhoneChongzhiActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@color/title_color" >
+        android:background="@color/title_color">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-             >
-             
-             <RelativeLayout
-            android:id="@+id/nine_back"
-            android:layout_width="45dp"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView1"
+            <RelativeLayout
+                android:id="@+id/nine_back"
+                android:layout_width="45dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/back" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:src="@mipmap/back" />
-            
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="9.9元购"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/title_size" />
+
+            <TextView
+                android:id="@+id/share_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:text="分享 "
+                android:textColor="#ffffff"
+                android:textSize="@dimen/bigtextsize" />
         </RelativeLayout>
 
-             <TextView
-                 android:id="@+id/textView1"
-                 android:layout_width="wrap_content"
-                 android:layout_height="match_parent"
-                 android:layout_alignParentTop="true"
-                 android:layout_centerHorizontal="true"
-                 android:layout_weight="1"
-                 android:gravity="center"
-                 android:text="1元包邮"
-                 android:textColor="#ffffff"
-                 android:textSize="@dimen/title_size" />
-
-        </RelativeLayout>
-            
     </LinearLayout>
 
     <!-- <ScrollView
@@ -526,63 +535,60 @@
         
         </LinearLayout>
     </ScrollView> -->
-    
-       <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/refresh_view1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
 
-    <include layout="@layout/refresh_head" />
-    <!-- 支持所有实现Pullable接口的View -->
-
-    <zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView
-        android:id="@+id/nine_scrollView"
+    <zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh_view1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView
+            android:id="@+id/nine_scrollView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-             
-              <ImageView
-        android:id="@+id/nine_img"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/topimg_height"
-       	android:scaleType="centerCrop"
-        android:src="@mipmap/logo"
-        
-        />
+            android:layout_height="match_parent">
 
-             <zsj.com.oyk255.example.ouyiku.view.MyGridView
-        android:id="@+id/nine_gridview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="2" 
-           android:horizontalSpacing="1dp"
-        android:verticalSpacing="1dp"
-        android:background="#ffffff"
-      
-        >
-    </zsj.com.oyk255.example.ouyiku.view.MyGridView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-             <ImageView
-                 android:id="@+id/nineimg_null"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:src="@mipmap/ninezeronull"
-                 android:layout_marginTop="60dp"
-                 android:visibility="gone"
-                  />
+                <ImageView
+                    android:id="@+id/nine_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/topimg_height"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/logo"
 
-        </LinearLayout>
-    </zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView>
-    
-    <include
-        android:id="@+id/load_more_nine"
-         layout="@layout/load_more" />
+                    />
 
-</zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
+                <zsj.com.oyk255.example.ouyiku.view.MyGridView
+                    android:id="@+id/nine_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:horizontalSpacing="1dp"
+                    android:numColumns="2"
+                    android:verticalSpacing="1dp"
+
+                    ></zsj.com.oyk255.example.ouyiku.view.MyGridView>
+
+                <ImageView
+                    android:id="@+id/nineimg_null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="60dp"
+                    android:src="@mipmap/ninezeronull"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView>
+
+        <include
+            android:id="@+id/load_more_nine"
+            layout="@layout/load_more" />
+
+    </zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout>
 
 </LinearLayout>

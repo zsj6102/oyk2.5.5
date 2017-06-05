@@ -1,6 +1,7 @@
 package zsj.com.oyk255.example.ouyiku.v1;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +18,8 @@ import zsj.com.oyk255.suiyuchen.UILUtils;
  * A simple {@link Fragment} subclass.
  *
  */
+
+@SuppressLint("ValidFragment")
 public class PinDetailBannerFragment extends Fragment {
 	
 	protected int mPosition;

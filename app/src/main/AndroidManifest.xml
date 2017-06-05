@@ -200,8 +200,13 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="zsj.com.oyk255.example.ouyiku.v1.NetredDetailActivity"
+            android:label="@string/title_activity_search"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="zsj.com.oyk255.example.ouyiku.v1.OykActivity"
-            android:label="@string/title_activity_oyk"
+            android:label="@string/title_activity_netredDetail"
             android:screenOrientation="portrait" >
         </activity>
         <activity

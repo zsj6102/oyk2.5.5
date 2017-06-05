@@ -39,6 +39,7 @@
     <string name="title_activity_try">TryActivity</string>
     <string name="title_activity_trial">TrialActivity</string>
     <string name="title_activity_gift">GiftActivity</string>
+    <string name="title_activity_netredDetail">NetredDetailActivity</string>
     <string name="title_activity_brand_detail">Brand_detailActivity</string>
     <string name="title_activity_send_comment">SendCommentActivity</string>
     <string name="title_activity_pay">PayActivity</string>

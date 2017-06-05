@@ -7,6 +7,8 @@ package zsj.com.oyk255.example.ouyiku.fragment;
 //import zsj.com.oyk255.example.ouyiku.v1.R.layout;
 //import com.suiyuchen.UILUtils;
 
+import android.annotation.SuppressLint;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,6 +24,8 @@ import zsj.com.oyk255.suiyuchen.UILUtils;
  * A simple {@link Fragment} subclass.
  *
  */
+
+@SuppressLint("ValidFragment")
 public class HomeBannerFragment extends Fragment {
 	
 	int position;

@@ -5,51 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.android.volley.VolleyError;
-//import zsj.com.oyk255.example.ouyiku.homejson.BannerDatum;
-//import zsj.com.oyk255.example.ouyiku.homejson.Datum;
-//import zsj.com.oyk255.example.ouyiku.homejson.HomeBanner;
-//import zsj.com.oyk255.example.ouyiku.homejson.HomeBrandTuiJia;
-//import zsj.com.oyk255.example.ouyiku.homejson.HomeBrandTuiJiaDatum;
-//import zsj.com.oyk255.example.ouyiku.homejson.HomeThree;
-//import zsj.com.oyk255.example.ouyiku.homejson.HomeTuijian;
-//import zsj.com.oyk255.example.ouyiku.homejson.HomeTuijianData;
-//import zsj.com.oyk255.example.ouyiku.homejson.SevenShop;
-//import zsj.com.oyk255.example.ouyiku.homejson.Status;
-//import zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout;
-//import zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout.OnRefreshListener;
-//import zsj.com.oyk255.example.ouyiku.utils.Constant;
-//import zsj.com.oyk255.example.ouyiku.utils.ScreenUtils;
-//import zsj.com.oyk255.example.ouyiku.v1.Brand_detailActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.CouponsActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.DetailActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.HomeHuoDongActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.HotSaleActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.LoginActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.NewGoodsActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.NewsPeopleDetailActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.PhoneChongzhiActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.PinTuanActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.R;
-//import zsj.com.oyk255.example.ouyiku.v1.RedBagActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.SeaShopActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.SearchActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.SignActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.TimeSaleActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.TopActivity;
-//import zsj.com.oyk255.example.ouyiku.v1.TryuseActivity;
-//import zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView;
-//import zsj.com.oyk255.example.ouyiku.view.MyGridView;
-//import zsj.com.oyk255.example.ouyiku.view.ScrollViewWithListView;
-//import zsj.com.oyk255.example.ouyiku.view.ViewpageIndicator;
-//import zsj.com.oyk255.example.ouyiku.view.ZProgressHUD;
+
 import com.google.gson.Gson;
-//import com.suiyuchen.HTTPUtils;
-//import com.suiyuchen.UILUtils;
-//import com.suiyuchen.VolleyListener;
+
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Paint;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -202,11 +164,11 @@ public class HomeFragment extends Fragment implements OnClickListener{
 					String pic5 = mThreeData.get(4);
 					String pic6 = mThreeData.get(5);
 					UILUtils.displayImageNoAnim(pic1, xianshimiaosha);
-					UILUtils.displayImageNoAnim(pic2, ninebuy);
-					UILUtils.displayImageNoAnim(pic3, zerobuy);
-					UILUtils.displayImageNoAnim(pic4, redbag);
-					UILUtils.displayImageNoAnim(pic5, pingtuan);
-					UILUtils.displayImageNoAnim(pic6, pinhongbao);
+					UILUtils.displayImageNoAnim(pic5, ninebuy);
+					UILUtils.displayImageNoAnim(pic6, zerobuy);
+					UILUtils.displayImageNoAnim(pic2, redbag);
+					UILUtils.displayImageNoAnim(pic3, pingtuan);
+//					UILUtils.displayImageNoAnim(pic6, pinhongbao);
 				}
 				
 			}
@@ -397,10 +359,10 @@ public class HomeFragment extends Fragment implements OnClickListener{
 		xianshimiaosha = (ImageView) rootview.findViewById(R.id.xianshimiaosha);
 		zerobuy = (ImageView) rootview.findViewById(R.id.zerobuy);
 		ninebuy = (ImageView) rootview.findViewById(R.id.ninebuy);
-		
+
 		redbag = (ImageView) rootview.findViewById(R.id.redbag);
 		pingtuan = (ImageView) rootview.findViewById(R.id.pingtuan);
-		pinhongbao = (ImageView) rootview.findViewById(R.id.pinhongbao);
+//		pinhongbao = (ImageView) rootview.findViewById(R.id.pinhongbao);
 		
 		
 		
@@ -409,7 +371,7 @@ public class HomeFragment extends Fragment implements OnClickListener{
 		ninebuy.setOnClickListener(this);
 		redbag.setOnClickListener(this);
 		pingtuan.setOnClickListener(this);
-		pinhongbao.setOnClickListener(this);
+//		pinhongbao.setOnClickListener(this);
 		
 		
 		mSearch_edit = (TextView) rootview.findViewById(R.id.search_edit);//搜索
@@ -604,7 +566,7 @@ public class HomeFragment extends Fragment implements OnClickListener{
 		case R.id.bangdan://榜单
 			startActivity(new Intent(getActivity(), TopActivity.class));
 			break;
-		case R.id.zerobuy://0元购
+		case R.id.zerobuy://网红爆款
 			startActivity(new Intent(getActivity(), TryuseActivity.class));
 			break;
 		case R.id.seabuy://海淘
@@ -655,15 +617,15 @@ public class HomeFragment extends Fragment implements OnClickListener{
 			intent4.putExtra("mSevenShop1", mSevenShop.get(4).getMerchantId());
 			startActivity(intent4);
 			break;
-		case R.id.pinhongbao:
-			if(!userid.equals("")){
-				Intent intent5 = new Intent(getActivity(), HomeHuoDongActivity.class);
-				startActivity(intent5);
-			}else{
-				startActivity(new Intent(getActivity(), LoginActivity.class));
-			}
-			
-			break;
+//		case R.id.pinhongbao:
+//			if(!userid.equals("")){
+//				Intent intent5 = new Intent(getActivity(), HomeHuoDongActivity.class);
+//				startActivity(intent5);
+//			}else{
+//				startActivity(new Intent(getActivity(), LoginActivity.class));
+//			}
+//
+//			break;
 //		case R.id.store_img7:
 //			Log.e("store_img7", mSevenShop.get(6).getMerchantId());
 //			Intent intent6 = new Intent(getActivity(), Brand_detailActivity.class);

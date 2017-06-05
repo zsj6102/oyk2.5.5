@@ -36,6 +36,7 @@ import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -59,6 +60,7 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  *
  */
+@SuppressLint("ValidFragment")
 public class DetailTopFragment extends Fragment implements OnClickListener{
 
 	private View view;

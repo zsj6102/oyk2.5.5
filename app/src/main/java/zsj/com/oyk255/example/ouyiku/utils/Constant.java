@@ -56,7 +56,8 @@ public class Constant {
 		public static final String DetailSKUURL=
 				"http://a.ouyiku.com/?c=Index&a=productattr";//商品属性
 		
-		
+		public static final String DetailNetredUrl=
+				"http://a.ouyiku.com/?c=huodong2&a=baokuandetail";//网红爆款
 		public static final String DetailGraphicURL=
 				"http://a.ouyiku.com/?c=Index&a=img_str&product_id=";
 		
@@ -127,11 +128,14 @@ public class Constant {
 		public static final String 	DrandNewsTimeURL="http://a.ouyiku.com/?c=Tomorrow&a=gettime";//品牌新品时间
 		public static final String 	BrandTommorrowURL="http://a.ouyiku.com/?c=Tomorrow&a=tplist";//明日列表
 
-		public static final String 	NineListURL="http://a.ouyiku.com/?c=huodong2&a=hlist";//9.9元列表
+
+		public static final String 	NineListURL="http://a.ouyiku.com/?c=huodong2&a=jiubuylist&type=7";//9.9元列表
 		public static final String 	NineDetailURL="http://a.ouyiku.com/?c=huodong2&a=getdetail";//9.9元详情页
-		public static final String 	NineBannerURL="http://a.ouyiku.com/?c=huodong&a=pic_carousel";//9.9元轮播
+		public static final String 	NineBannerURL="http://a.ouyiku.com/?c=huodong2&a=getbannerimg&type=1";//9.9元轮播
 		public static final String 	NineBuyURL="http://a.ouyiku.com/?c=huodong1&a=buy";//9.9元购买
-		
+
+		public static final String NetRedURL="http://a.ouyiku.com/?c=huodong2&a=wanghonglist&type=6";//网红爆款
+
 		public static final String 	HotSaleURL="http://a.ouyiku.com/?c=Index&a=hotbest1";//热卖精选
 		
 		public static final String 	SeaShopURL="http://a.ouyiku.com/?c=haiwai&a=hlist";//海外淘
@@ -187,7 +191,7 @@ public class Constant {
 		public static final String 	TopTabslUrl="http://a.ouyiku.com/?c=hot&a=hotcats";//榜单分类
 		public static final String 	TopListlUrl="http://a.ouyiku.com/?c=hot&a=hotlist";//榜单列表
 		
-		public static final String 	HomeThreePicUrl="http://a.ouyiku.com/?c=index&a=activeImg";//首页三张图片
+		public static final String 	HomeThreePicUrl="http://a.ouyiku.com/?c=index&a=activeImg1";//首页三张图片
 		
 		public static final String 	IsSingUrl="http://a.ouyiku.com/?c=sign&a=issign";//是否签到
 		public static final String 	SignInUrl="http://a.ouyiku.com/?c=sign&a=signin";//签到

@@ -9,6 +9,7 @@ import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -41,6 +42,8 @@ import zsj.com.oyk255.suiyuchen.VolleyListener;
  * A simple {@link Fragment} subclass.
  *
  */
+
+@SuppressLint("ValidFragment")
 public class MyPinFragment extends Fragment {
 
 	private View view;

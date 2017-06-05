@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:gravity="center" 
+            android:gravity="center"
             android:layout_marginRight="12dp"
             >
 
@@ -129,10 +129,10 @@
             android:text="加入购物车"
             android:textColor="#ffffff"
             android:layout_margin="6dp"
-            android:textSize="@dimen/mediumsize" 
+            android:textSize="@dimen/mediumsize"
 			android:layout_weight="1"
 				/> -->
-        
+
         <TextView
             android:id="@+id/ninedetail_buy"
             android:layout_width="match_parent"
@@ -145,7 +145,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:textSize="@dimen/mediumsize" 
+            android:textSize="@dimen/mediumsize"
 				/>
     </LinearLayout>
 

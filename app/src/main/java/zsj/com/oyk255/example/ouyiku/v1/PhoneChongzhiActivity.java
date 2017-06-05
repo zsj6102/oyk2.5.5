@@ -70,7 +70,7 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
     	progressHUD.show();
 		String url= Constant.URL.NineBannerURL;
 		HTTPUtils.get(this, url, new VolleyListener() {
-			
+
 			@Override
 			public void onResponse(String arg0) {
 				progressHUD.dismiss();
@@ -86,21 +86,21 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 					UILUtils.displayImageNoAnim(url2, mTopView);
 				}
 			}
-			
+
 			@Override
 			public void onErrorResponse(VolleyError arg0) {
 				progressHUD.dismiss();
-				
+
 			}
 		});
-		
+
 	}
 
 	private NineAdapter nineAdapter;
 	private ImageView mImgNull;
-	
+
 	private void initList() {
-		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this); 
+		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this);
     	progressHUD.setMessage("加载中");
     	progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER );
     	progressHUD.show();
@@ -109,7 +109,7 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 		map.put("type", "1");
 		map.put("num", "0");
 		HTTPUtils.post(this, url, map, new VolleyListener() {
-			
+
 
 			@Override
 			public void onResponse(String arg0) {
@@ -121,28 +121,28 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 				if(succeed.equals("1")){
 					List<Nine0NineDatum> data = fromJson.getData();
 					mListData.addAll(data);
-					
+
 					if(mListData.size()==0){
 						mImgNull.setVisibility(View.VISIBLE);
 					}else{
 						mImgNull.setVisibility(View.GONE);
 						nineAdapter = new NineAdapter();
 						mGridview.setAdapter(nineAdapter);
-						
+
 					}
-					
+
 				}
 				Log.e("arg0", arg0);
-				
+
 			}
-			
+
 			@Override
 			public void onErrorResponse(VolleyError arg0) {
 				progressHUD.dismiss();
-				
+
 			}
 		});
-		
+
 	}
 
 	private void initUI() {
@@ -168,10 +168,10 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 				}else{
 					Toast.makeText(PhoneChongzhiActivity.this, "已被抢光啦", Toast.LENGTH_SHORT).show();
 				}
-				
-				
+
+
 			}
-		});		
+		});
 	}
 
 	@Override
@@ -184,7 +184,7 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 		default:
 			break;
 		}
-		
+
 	}
 	class NineAdapter extends BaseAdapter{
 
@@ -228,7 +228,7 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 			String phone1 = nine0NineDatum.getPhone1();//图片
 			String productId = nine0NineDatum.getProductId();//商品id
 			String rebate = nine0NineDatum.getRebate();
-			
+
 			holder.OldPrice.setText("￥"+marketprice);
 			holder.NewPrice.setText("￥"+currprice);
 			holder.GoodsInfo.setText(title);
@@ -243,13 +243,13 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 //	        float b2=b/10;
 //	        
 //	        String valueOf = String.valueOf(df.format((b2 * 100)));
-	        
+
 			holder.Discount.setText(rebate+"折");
 			return view;
 		}
-		
+
 	}
-	
+
 	class ViewHolder
 	{
 		AspectRatioImageView Imginfo;
@@ -257,13 +257,13 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 		TextView GoodsInfo;
 		TextView NewPrice;
 		TextView Discount;
-		
+
 	}
-	
+
 	public class MyListener implements PullToRefreshLayout.OnRefreshListener
 	{
 
-		
+
 		@Override
 		public void onRefresh(final PullToRefreshLayout pullToRefreshLayout)
 		{
@@ -293,13 +293,13 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 						pullToRefreshLayout.loadmoreFinish(PullToRefreshLayout.SUCCEED);
 					}else{
 						int size = mListData.size();
-						
+
 						String url=Constant.URL.NineListURL;
 						HashMap<String, String> map=new HashMap<String, String>();
 						map.put("type", "1");
 						map.put("num", size+"");
 						HTTPUtils.post(PhoneChongzhiActivity.this, url, map, new VolleyListener() {
-							
+
 
 							@Override
 							public void onResponse(String arg0) {
@@ -312,25 +312,25 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 									List<Nine0NineDatum> data = fromJson.getData();
 									mListData.addAll(data);
 									nineAdapter.notifyDataSetChanged();
-									
+
 									pullToRefreshLayout.loadmoreFinish(PullToRefreshLayout.SUCCEED);
 								}
 								else{
 									pullToRefreshLayout.loadmoreFinish(PullToRefreshLayout.FAIL);
-									
+
 								}
-								
+
 							}
-							
+
 							@Override
 							public void onErrorResponse(VolleyError arg0) {
 								// TODO Auto-generated method stub
-								
+
 							}
 						});
 					}
-					
-				
+
+
 				}
 			}.sendEmptyMessageDelayed(0, 3000);
 		}

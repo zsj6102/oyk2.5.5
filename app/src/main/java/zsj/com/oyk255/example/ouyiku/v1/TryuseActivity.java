@@ -26,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import zsj.com.oyk255.R;
 import zsj.com.oyk255.example.ouyiku.detailjson.Status;
 import zsj.com.oyk255.example.ouyiku.detailjson.ZeroList;
@@ -40,7 +39,7 @@ import zsj.com.oyk255.suiyuchen.VolleyListener;
 
 public class TryuseActivity extends OykActivity implements OnClickListener{
 
-	//零元购
+	//网红爆款
 	ArrayList<ZeroListDatum> mListData=new ArrayList<ZeroListDatum>();
 	private ListView mListView;
 	private ZeroAdapter zeroAdapter;
@@ -53,8 +52,9 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
 		PushAgent.getInstance(this).onAppStart();
 		((PullToRefreshLayout) findViewById(R.id.refresh_view1))
 		.setOnRefreshListener(new MyListener());
-		initUI();
 		initList();
+		initUI();
+
 	}
 
 	private void initList() {
@@ -62,9 +62,9 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
     	progressHUD.setMessage("加载中");
     	progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER );
     	progressHUD.show();
-		String url= Constant.URL.NineListURL;
+		String url= Constant.URL.NetRedURL;
 		HashMap<String, String> map=new HashMap<String, String>();
-		map.put("type", "0");
+		map.put("type", "1");
 		map.put("num", "0");
 		HTTPUtils.post(this, url, map, new VolleyListener() {
 			
@@ -79,19 +79,20 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
 				if(succeed.equals("1")){
 					List<ZeroListDatum> data = fromJson.getData();
 					mListData.addAll(data);
+
 					if(mListData.size()==0){
 						mNull.setVisibility(View.VISIBLE);
 					}else{
 						mNull.setVisibility(View.GONE);
 						zeroAdapter = new ZeroAdapter();
 						mListView.setAdapter(zeroAdapter);
-						
+
 					}
-					
+
 				}
-				
+
 			}
-			
+
 			@Override
 			public void onErrorResponse(VolleyError arg0) {
 				progressHUD.dismiss();
@@ -111,12 +112,11 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
 				String stock = mListData.get(position).getStock();
 				if(!stock.equals("0")){
 					
-					Intent intent = new Intent(TryuseActivity.this, NewsPeopleDetailActivity.class);
+					Intent intent = new Intent(TryuseActivity.this, DetailActivity.class);
 					String productId = mListData.get(position).getProductId();
 					String phone1 = mListData.get(position).getPhone1();
-					
 					intent.putExtra("phone1", phone1);
-					intent.putExtra("productId", productId);
+					intent.putExtra("product_id", productId);
 					startActivity(intent);
 				}else{
 					Toast.makeText(TryuseActivity.this, "本期已结束", Toast.LENGTH_SHORT).show();
@@ -165,12 +165,12 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
 				view=getLayoutInflater().inflate(R.layout.zero_list_item, null);
 				holder=new ViewHolder();
 				holder.mLogo = (ImageView) view.findViewById(R.id.zeroitem_logo);
-				holder.mBackground = (ImageView) view.findViewById(R.id.zeroitem_qianggouimg);
+//				holder.mBackground = (ImageView) view.findViewById(R.id.zeroitem_qianggouimg);
 				holder.mTitle = (TextView) view.findViewById(R.id.zeroitemtitle);
 				holder.mNewPrice = (TextView) view.findViewById(R.id.zeroitem_newprice);
 				holder.mOldPrice = (TextView) view.findViewById(R.id.zeroitem_oldprice);
 				holder.mOldPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG);
-				holder.mNum = (TextView) view.findViewById(R.id.zeroitem_num);
+//				holder.mNum = (TextView) view.findViewById(R.id.zeroitem_num);
 				view.setTag(holder);
 			}else{
 				view=convertView;
@@ -184,10 +184,10 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
 			String title = zeroListDatum.getTitle();
 			
 			if(stock.equals("0")){
-				holder.mBackground.setImageResource(R.mipmap.lose);
-				holder.mNum.setVisibility(View.GONE);
+//				holder.mBackground.setImageResource(R.mipmap.lose);
+//				holder.mNum.setVisibility(View.GONE);
 			}else{
-				holder.mNum.setText("剩余"+stock);
+//				holder.mNum.setText("剩余"+stock);
 				
 			}
 			holder.mTitle.setText(title);
@@ -201,11 +201,11 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
 	
 	class ViewHolder{
 		ImageView mLogo;
-		ImageView mBackground;
+//		ImageView mBackground;
 		TextView mTitle;
 		TextView mNewPrice;
 		TextView mOldPrice;
-		TextView mNum;
+//		TextView mNum;
 		
 	}
 	

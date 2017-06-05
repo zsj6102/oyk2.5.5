@@ -196,12 +196,12 @@
         android:background="@color/background_color"
          >
 
-             <zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView
-                 android:id="@+id/pinhongbao"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:src="@mipmap/logo"
-                  />
+             <!--<zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView-->
+                 <!--android:id="@+id/pinhongbao"-->
+                 <!--android:layout_width="match_parent"-->
+                 <!--android:layout_height="wrap_content"-->
+                 <!--android:src="@mipmap/logo"-->
+                  <!--/>-->
 
     </LinearLayout>
           <View
@@ -284,7 +284,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             />
-        
+
 
         <ImageView
             android:id="@+id/pingtuan"

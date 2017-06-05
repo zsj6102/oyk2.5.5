@@ -9,6 +9,7 @@ import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,7 +36,7 @@ import zsj.com.oyk255.example.ouyiku.view.ZProgressHUD;
 import zsj.com.oyk255.suiyuchen.HTTPUtils;
 import zsj.com.oyk255.suiyuchen.UILUtils;
 import zsj.com.oyk255.suiyuchen.VolleyListener;
-
+@SuppressLint("ValidFragment")
 /**
  * A simple {@link Fragment} subclass.
  *

@@ -466,7 +466,7 @@
                 android:id="@+id/cantuan_daojishi"
                 >
                 <TextView
-                    android:id="@+id/textView3"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="剩余"
@@ -485,7 +485,7 @@
                      />
 
                 <TextView
-                    android:id="@+id/textView3"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="结束"

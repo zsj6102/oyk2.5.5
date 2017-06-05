@@ -1,5 +1,6 @@
 package zsj.com.oyk255.example.ouyiku.v1;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,8 @@ import zsj.com.oyk255.R;
  * A simple {@link Fragment} subclass.
  *
  */
+
+@SuppressLint("ValidFragment")
 public class YindAOFragment extends Fragment {
 
 	private View view;

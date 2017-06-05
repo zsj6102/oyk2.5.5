@@ -26,6 +26,7 @@ import zsj.com.oyk255.suiyuchen.UILUtils;
  * 图文介绍
  *
  */
+@SuppressLint("ValidFragment")
 public class GraphicFragment extends Fragment {
 
 	private View graphicview;

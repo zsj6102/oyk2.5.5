@@ -1,5 +1,6 @@
 package zsj.com.oyk255.example.ouyiku.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import zsj.com.oyk255.suiyuchen.UILUtils;
  * 商品详情页图片viewpage
  *
  */
+@SuppressLint("ValidFragment")
 public class DetailGoodsinfoFragment extends Fragment {
 
 	protected int mPosition;

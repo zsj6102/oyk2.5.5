@@ -2,6 +2,7 @@ package zsj.com.oyk255.example.ouyiku.fragment;
 
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,13 +19,14 @@ import zsj.com.oyk255.suiyuchen.UILUtils;
  * 轮播图
  *
  */
-
+@SuppressLint("ValidFragment")
 public class BannerItemFragment extends Fragment {
 	protected int mPosition;
 	int mImgRes;
 	BannerDatum bannerDatum;
 	Datum datum;
 	private ImageView img;
+
 	public BannerItemFragment(int position,int mImgRes) {
 		this.mPosition = position;
 		this.mImgRes=mImgRes;

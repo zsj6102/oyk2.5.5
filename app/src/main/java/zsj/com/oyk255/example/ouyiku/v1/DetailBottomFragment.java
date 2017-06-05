@@ -33,6 +33,7 @@ import zsj.com.oyk255.suiyuchen.VolleyListener;
  * A simple {@link Fragment} subclass.
  *
  */
+@SuppressLint("ValidFragment")
 public class DetailBottomFragment extends Fragment {
 
 	private View view;
