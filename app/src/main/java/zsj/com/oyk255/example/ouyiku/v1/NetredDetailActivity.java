@@ -13,12 +13,13 @@ import zsj.com.oyk255.example.ouyiku.collectjson.IntoShopCarData;
 import zsj.com.oyk255.example.ouyiku.detail.popwindow.Detail_popwindow;
 import zsj.com.oyk255.example.ouyiku.detail.popwindow.Share_pop;
 import zsj.com.oyk255.example.ouyiku.detailjson.Data;
+import zsj.com.oyk255.example.ouyiku.detailjson.DataNet;
 import zsj.com.oyk255.example.ouyiku.detailjson.Datainfo;
-import zsj.com.oyk255.example.ouyiku.detailjson.DetaiBanner;
 import zsj.com.oyk255.example.ouyiku.detailjson.DetaiBrandData;
 import zsj.com.oyk255.example.ouyiku.detailjson.DetailGraphic2Datum;
 import zsj.com.oyk255.example.ouyiku.detailjson.DetailTop;
 import zsj.com.oyk255.example.ouyiku.detailjson.IfSuccess;
+import zsj.com.oyk255.example.ouyiku.detailjson.NetredDetail;
 import zsj.com.oyk255.example.ouyiku.detailjson.Status;
 import zsj.com.oyk255.example.ouyiku.detailskujson.Attrlist;
 import zsj.com.oyk255.example.ouyiku.detailskujson.Datum;
@@ -59,10 +60,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -78,10 +80,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -100,7 +99,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
     private ArrayList<Map<Integer, String>> list = new ArrayList<Map<Integer, String>>();//存放属性字
     private ArrayList<Map<Integer, String>> list2 = new ArrayList<Map<Integer, String>>();//存放属性id
     private ArrayList<Map<Integer, String>> list3 = new ArrayList<Map<Integer, String>>();//存放属性图片地址
-
+    private String fpro_id;//网红图文详情传的这个id
     private ScrollViewWithListView mListView;
     private CustomViewPager mLunBoPager;
     private ViewpageIndicator viewpageIndicator;
@@ -159,13 +158,12 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
         product_id = intent.getStringExtra("product_id");
         screenWidth = ScreenUtils.getScreenWidth(this);
         initUI();
-        initData();
-        initPopAndBabycoll();//是否收藏宝贝title price
-        initBrand();
+
+//        initPopAndBabycoll();//是否收藏宝贝title price
+
         initFoot();
         initGoodsSKU();
-        //图文详情
-        initGraphic();
+
     }
 
     @Override
@@ -251,49 +249,21 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
 
     }
 
-    private void initBrand() {
-        final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this);
-        progressHUD.setMessage("加载中");
-        progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER);
-        progressHUD.show();
-        //中间品牌
-        String DetailBrandUrl = Constant.URL.DetailUnloginBrandURL + product_id + "&user_id=" + userid;
-        HTTPUtils.get(this, DetailBrandUrl, new VolleyListener() {
+    private void initBrand(String brandTitle,String brandtotal,String collectnum,String brandsalenum,String logo,String isbcollect) {
 
-
-            @Override
-            public void onResponse(String arg0) {
-                progressHUD.dismiss();
-                Gson gson = new Gson();
-                DetaiBrandData fromJson = gson.fromJson(arg0, DetaiBrandData.class);
-                Status status = fromJson.getStatus();
-                String succeed = status.getSucceed();
-                if (succeed.equals("1")) {
-                    Datainfo data = fromJson.getData();
-                    mDatail_brandname.setText(data.getTitle());
-                    mDatail_brandnum.setText(data.getPnumber());
-                    mDatail_brandcollNum.setText(data.getCnumber());
+                    mDatail_brandname.setText(brandTitle);
+                    mDatail_brandnum.setText(brandtotal);
+                    mDatail_brandcollNum.setText(collectnum);
 //					mDatail_brandpers.setText(data.getPers());
-                    String bsalesum = data.getBsalesum();
-                    mDatail_brandpers.setText(bsalesum);
-                    brandId = data.getBrandId();
-                    UILUtils.displayImageNoAnim(data.getBackground(), mDatail_brandlogo);
+                    mDatail_brandpers.setText(brandsalenum);
+                    UILUtils.displayImageNoAnim(logo, mDatail_brandlogo);
 
-                    if (data.getIsCollect().equals("1")) {
+                    if (isbcollect.equals("1")) {
                         mDatail_brandColl.setImageResource(R.mipmap.collect_click);
                     } else {
                         mDatail_brandColl.setImageResource(R.mipmap.collect);
 
                     }
-
-                }
-            }
-
-            @Override
-            public void onErrorResponse(VolleyError arg0) {
-                progressHUD.dismiss();
-            }
-        });
 
     }
 
@@ -326,7 +296,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
         mDatail_brandlogo = (ImageView) findViewById(R.id.detail_brand_img);
         mDatail_brandColl = (ImageView) findViewById(R.id.detail_collect);
         findViewById(R.id.detail_collectview).setOnClickListener(this);
-        ;
+
 
         mDatail_brandname = (TextView) findViewById(R.id.detail_brandname);
         mDatail_brandnum = (TextView) findViewById(R.id.detail_goodsnum);
@@ -397,14 +367,37 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
             public void onResponse(String arg0) {
                 progressHUD.dismiss();
                 Gson gson = new Gson();
-                DetaiBanner fromJson = gson.fromJson(arg0, DetaiBanner.class);
+                NetredDetail fromJson = gson.fromJson(arg0, NetredDetail.class);
                 Status status = fromJson.getStatus();
                 String succeed = status.getSucceed();
+                DataNet data = fromJson.getData();
+
+//                DataNet data = fromJson.getData();
+//                String  time
                 if (succeed.equals("1")) {
-                    List<String> data = fromJson.getData();
-                    mBannerData.clear();
-                    mBannerData.addAll(data);
+                    String pr = data.getProductId();
+                    String ff = data.getFpro_id();
+                    fpro_id = ff;
+                    brandId= data.getBrand_id();
+                    String curprice = data.getCurrprice();
+                    String marketPrice = data.getMarketprice();
+                    old_price.setText("￥" +marketPrice);
+                    mDetail_newprice.setText("￥" + curprice);
+                    //图文详情
+                    initGraphic(ff);
+                    String brandTitle = data.getBrandtitle();
+                    String brandtotal = data.getBrandtotal();
+                    String collectnum = data.getCollectnum();
+                    String brandsalenum = data.getBrandsalenum();
+                    String logo = data.getLogo();
+                    String isbcollect = data.getIsbcollect();
+                    initBrand(brandTitle,brandtotal,collectnum,brandsalenum,logo,isbcollect);
+                    List<String> ss = data.getProduct_image();
+                     mBannerData.clear();
+                    mBannerData.addAll(ss);
                     sharePicUrl = mBannerData.get(0);
+//                    List<NetredDetail> data = fromJson.getData();
+
 //					//子线程执行获取分享要用的图片
 //					new Thread(new Runnable(){
 //
@@ -430,12 +423,12 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
     }
 
     //图文详情
-    private void initGraphic() {
+    private void initGraphic(String ff) {
         final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this);
         progressHUD.setMessage("加载中");
         progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER);
         progressHUD.show();
-        String DetailGraphicUrl = Constant.URL.DetailWebViewUrl + product_id;
+        String DetailGraphicUrl = Constant.URL.DetailWebViewUrl + ff;
         WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
         mWebView.loadUrl(DetailGraphicUrl);
@@ -523,7 +516,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                 Status status = fromJson.getStatus();
                 String succeed = status.getSucceed();
                 if (succeed.equals("1")) {
-                    initBrand();
+//                    initBrand();
                 } else {
 
                     startActivity(new Intent(NetredDetailActivity.this, LoginActivity.class));
@@ -737,7 +730,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                 report();
                 break;
             case R.id.detail_collectview:
-                ClickCollect();
+               ClickCollect();
                 break;
             case R.id.baby_collectview:
                 ClickCollectBaby();
@@ -1284,6 +1277,12 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
 
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initData();
     }
 
     class viewHolder {

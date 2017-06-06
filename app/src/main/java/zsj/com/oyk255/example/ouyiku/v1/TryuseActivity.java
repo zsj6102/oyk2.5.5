@@ -112,7 +112,7 @@ public class TryuseActivity extends OykActivity implements OnClickListener{
 				String stock = mListData.get(position).getStock();
 				if(!stock.equals("0")){
 					
-					Intent intent = new Intent(TryuseActivity.this, DetailActivity.class);
+					Intent intent = new Intent(TryuseActivity.this, NetredDetailActivity.class);
 					String productId = mListData.get(position).getProductId();
 					String phone1 = mListData.get(position).getPhone1();
 					intent.putExtra("phone1", phone1);

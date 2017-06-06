@@ -2,8 +2,6 @@ package zsj.com.oyk255.suiyuchen;
 
 import java.lang.reflect.Type;
 
-import android.media.MediaPlayer;
-
 import com.google.gson.Gson;
 
 public final class GsonUtils {
