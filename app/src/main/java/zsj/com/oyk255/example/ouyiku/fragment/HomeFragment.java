@@ -235,7 +235,7 @@ public class HomeFragment extends Fragment implements OnClickListener{
 	}
 
 	private void initData() {
-		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(getActivity()); 
+		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(getActivity());
     	progressHUD.setMessage("加载中");
     	progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER );
     	progressHUD.show();
@@ -289,7 +289,7 @@ public class HomeFragment extends Fragment implements OnClickListener{
 	}
 
 	private void initBanner() {
-		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(getActivity()); 
+		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(getActivity());
     	progressHUD.setMessage("加载中");
     	progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER );
     	progressHUD.show();

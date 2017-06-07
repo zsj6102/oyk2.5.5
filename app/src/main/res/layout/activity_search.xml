@@ -38,7 +38,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-
+            android:background="@drawable/search_bg"
             android:drawableLeft="@mipmap/homesearch"
             android:ems="12"
             android:hint="时尚女装，高档化妆品"

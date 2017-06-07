@@ -8,6 +8,7 @@ import java.util.Map;
 import com.android.volley.VolleyError;
 
 import zsj.com.oyk255.R;
+import zsj.com.oyk255.example.ouyiku.brandjson.BrandInfo;
 import zsj.com.oyk255.example.ouyiku.collectjson.IntoShopCar;
 import zsj.com.oyk255.example.ouyiku.collectjson.IntoShopCarData;
 import zsj.com.oyk255.example.ouyiku.detail.popwindow.Detail_popwindow;
@@ -17,7 +18,6 @@ import zsj.com.oyk255.example.ouyiku.detailjson.DataNet;
 import zsj.com.oyk255.example.ouyiku.detailjson.Datainfo;
 import zsj.com.oyk255.example.ouyiku.detailjson.DetaiBrandData;
 import zsj.com.oyk255.example.ouyiku.detailjson.DetailGraphic2Datum;
-import zsj.com.oyk255.example.ouyiku.detailjson.DetailTop;
 import zsj.com.oyk255.example.ouyiku.detailjson.IfSuccess;
 import zsj.com.oyk255.example.ouyiku.detailjson.NetredDetail;
 import zsj.com.oyk255.example.ouyiku.detailjson.Status;
@@ -29,6 +29,7 @@ import zsj.com.oyk255.example.ouyiku.fragment.DetailGoodsinfoFragment;
 import zsj.com.oyk255.example.ouyiku.utils.Constant;
 import zsj.com.oyk255.example.ouyiku.utils.PhotoUtil;
 import zsj.com.oyk255.example.ouyiku.utils.ScreenUtils;
+import zsj.com.oyk255.example.ouyiku.utils.ToastUtils;
 import zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView;
 import zsj.com.oyk255.example.ouyiku.view.CustomViewPager;
 import zsj.com.oyk255.example.ouyiku.view.MyGridView;
@@ -136,7 +137,10 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
 
     private static final String APP_ID = Constant.APPID.WXAPPID;
     private static final String APP_QQID = Constant.APPID.QQAPPID;
-
+    private String share_url;
+    private String share_title;
+    private  String curprice;
+    private String marketPrice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,11 +162,8 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
         product_id = intent.getStringExtra("product_id");
         screenWidth = ScreenUtils.getScreenWidth(this);
         initUI();
-
-//        initPopAndBabycoll();//是否收藏宝贝title price
-
         initFoot();
-        initGoodsSKU();
+//        initGoodsSKU();
 
     }
 
@@ -180,7 +181,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
         progressHUD.setMessage("加载中");
         progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER);
         progressHUD.show();
-        String url = Constant.URL.DetailSKUURL+ "&product_id=" + product_id;
+        String url = Constant.URL.DetailSKUURL + "&product_id=" + fpro_id;
         HTTPUtils.get(this, url, new VolleyListener() {
 
             @Override
@@ -249,21 +250,16 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
 
     }
 
-    private void initBrand(String brandTitle,String brandtotal,String collectnum,String brandsalenum,String logo,String isbcollect) {
+    private void initBrand(String brandTitle, String brandtotal, String collectnum, String brandsalenum, String logo, String isbcollect) {
 
-                    mDatail_brandname.setText(brandTitle);
-                    mDatail_brandnum.setText(brandtotal);
-                    mDatail_brandcollNum.setText(collectnum);
+        mDatail_brandname.setText(brandTitle);
+        mDatail_brandnum.setText(brandtotal);
+        mDatail_brandcollNum.setText(collectnum);
 //					mDatail_brandpers.setText(data.getPers());
-                    mDatail_brandpers.setText(brandsalenum);
-                    UILUtils.displayImageNoAnim(logo, mDatail_brandlogo);
+        mDatail_brandpers.setText(brandsalenum);
+        UILUtils.displayImageNoAnim(logo, mDatail_brandlogo);
+        initCollectBrand();
 
-                    if (isbcollect.equals("1")) {
-                        mDatail_brandColl.setImageResource(R.mipmap.collect_click);
-                    } else {
-                        mDatail_brandColl.setImageResource(R.mipmap.collect);
-
-                    }
 
     }
 
@@ -378,10 +374,13 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                     String pr = data.getProductId();
                     String ff = data.getFpro_id();
                     fpro_id = ff;
-                    brandId= data.getBrand_id();
-                    String curprice = data.getCurrprice();
-                    String marketPrice = data.getMarketprice();
-                    old_price.setText("￥" +marketPrice);
+                    brandId = data.getBrand_id();
+                    share_url = data.getShare_url();
+                    share_title = data.getTitle();
+                    mDetail_name.setText(share_title);
+                    curprice = data.getCurrprice();
+                    marketPrice = data.getMarketprice();
+                    old_price.setText("￥" + marketPrice);
                     mDetail_newprice.setText("￥" + curprice);
                     //图文详情
                     initGraphic(ff);
@@ -391,9 +390,37 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                     String brandsalenum = data.getBrandsalenum();
                     String logo = data.getLogo();
                     String isbcollect = data.getIsbcollect();
-                    initBrand(brandTitle,brandtotal,collectnum,brandsalenum,logo,isbcollect);
+
+                    initBrand(brandTitle, brandtotal, collectnum, brandsalenum, logo, isbcollect);
+                    List<Datum> listdata = data.getSkudata();//list.size
+                    mListData.clear();
+                    mListData.addAll(listdata);
+
+                    List<Stock> stock = data.getAttr();//点击购买/购物车 返回use_id  需作判断
+                    for (int i = 0; i < stock.size(); i++) {
+                        mStockIdData.put(i, stock.get(i).getSkunatureId());
+
+                        mUserIDData.put(i, stock.get(i).getUseId());
+                    }
+                    aaa = new String[mListData.size()];
+
+                    for (int i = 0; i < mListData.size(); i++) {
+                        List<Attrlist> attrlist = mListData.get(i).getAttrlist();
+
+                        HashMap<Integer, String> mAnameData = new HashMap<Integer, String>();
+                        HashMap<Integer, String> mSkunatureIdData = new HashMap<Integer, String>();
+                        HashMap<Integer, String> mImgUrldData = new HashMap<Integer, String>();
+                        for (int j = 0; j < attrlist.size(); j++) {
+                            mAnameData.put(j, attrlist.get(j).getAname());
+                            mSkunatureIdData.put(j, attrlist.get(j).getSkunatureId());
+                            mImgUrldData.put(j, attrlist.get(j).getImgUrl());
+                        }
+                        list.add(i, mAnameData);
+                        list2.add(i, mSkunatureIdData);
+                        list3.add(i, mImgUrldData);
+                    }
                     List<String> ss = data.getProduct_image();
-                     mBannerData.clear();
+                    mBannerData.clear();
                     mBannerData.addAll(ss);
                     sharePicUrl = mBannerData.get(0);
 //                    List<NetredDetail> data = fromJson.getData();
@@ -420,6 +447,45 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
         });
 
 
+    }
+
+    private void initCollectBrand() {
+
+        String BrandUrl = Constant.URL.BrandDetailURL;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("brand_id", brandId);
+        //用户id
+        params.put("user_id", userid);
+        HTTPUtils.post(NetredDetailActivity.this, BrandUrl, params, new VolleyListener() {
+
+            @Override
+            public void onResponse(String arg0) {
+                Gson gson = new Gson();
+                BrandInfo fromJson = gson.fromJson(arg0, BrandInfo.class);
+                zsj.com.oyk255.example.ouyiku.brandjson.Status status = fromJson.getStatus();
+                String succeed = status.getSucceed();
+                if (succeed.equals("1")) {
+                    zsj.com.oyk255.example.ouyiku.brandjson.Data data = fromJson.getData();
+                    String isCollect = data.getIsCollect();
+                    if (isCollect.equals("1")) {
+                        mDatail_brandColl.setImageResource(R.mipmap.collect_click);
+                    } else {
+                        mDatail_brandColl.setImageResource(R.mipmap.collect);
+
+                    }
+
+                } else if (succeed.equals("0")) {
+                    ToastUtils.toast(NetredDetailActivity.this, "暂无数据");
+                }
+            }
+
+            @Override
+            public void onErrorResponse(VolleyError arg0) {
+
+//							Toast.makeText(Brand_detailActivity.this, "网络异常", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     //图文详情
@@ -449,51 +515,6 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
             }
 
         });
-
-
-    }
-
-
-    private void initPopAndBabycoll() {
-        final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this);
-        progressHUD.setMessage("加载中");
-        progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER);
-        progressHUD.show();
-        String DetailUrl = Constant.URL.DetailDataURL + product_id + "&user_id=" + userid;
-        HTTPUtils.get(this, DetailUrl, new VolleyListener() {
-
-
-            @Override
-            public void onResponse(String arg0) {
-                progressHUD.dismiss();
-                Gson gson = new Gson();
-                DetailTop fromJson = gson.fromJson(arg0, DetailTop.class);
-                Status status = fromJson.getStatus();
-                String succeed = status.getSucceed();
-                if (succeed.equals("1")) {
-                    data = fromJson.getData();
-                    old_price.setText("￥" + data.getMPrice());
-                    mDetail_newprice.setText("￥" + data.getPrice());
-                    mDetail_name.setText(data.getTitle());
-                    String is_c = data.getIs_c();
-                    if (is_c.equals("1")) {
-                        mBaby_Coll.setImageResource(R.mipmap.collect1_click);
-                        mBaby_text.setText("已收藏");
-                    } else {
-                        mBaby_Coll.setImageResource(R.mipmap.collect1);
-                        mBaby_text.setText("收藏");
-
-                    }
-
-
-                }
-            }
-
-            @Override
-            public void onErrorResponse(VolleyError arg0) {
-                progressHUD.dismiss();
-            }
-        });
     }
 
     //收藏品牌
@@ -516,7 +537,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                 Status status = fromJson.getStatus();
                 String succeed = status.getSucceed();
                 if (succeed.equals("1")) {
-//                    initBrand();
+                    initCollectBrand();
                 } else {
 
                     startActivity(new Intent(NetredDetailActivity.this, LoginActivity.class));
@@ -533,35 +554,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
 
     //收藏商品
     private void ClickCollectBaby() {
-        final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this);
-        progressHUD.setMessage("加载中");
-        progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER);
-        progressHUD.show();
-        sp = getSharedPreferences("userdata", 0);
-        userid = sp.getString("userid", "");
-        String BrandCollectUrl = Constant.URL.DetailBrandCollectURL + "&user_id=" + userid + "&product_id=" + product_id;
-        HTTPUtils.get(this, BrandCollectUrl, new VolleyListener() {
-
-            @Override
-            public void onResponse(String arg0) {
-                progressHUD.dismiss();
-                Gson gson = new Gson();
-                IfSuccess fromJson = gson.fromJson(arg0, IfSuccess.class);
-                Status status = fromJson.getStatus();
-                String succeed = status.getSucceed();
-                if (succeed.equals("1")) {
-                    initPopAndBabycoll();
-                } else {
-                    startActivity(new Intent(NetredDetailActivity.this, LoginActivity.class));
-                }
-
-            }
-
-            @Override
-            public void onErrorResponse(VolleyError arg0) {
-                progressHUD.dismiss();
-            }
-        });
+        Toast.makeText(NetredDetailActivity.this, "特殊活动不支持收藏", Toast.LENGTH_SHORT).show();
     }
 
     class ViewPageChangedListener implements OnPageChangeListener {
@@ -730,7 +723,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                 report();
                 break;
             case R.id.detail_collectview:
-               ClickCollect();
+                ClickCollect();
                 break;
             case R.id.baby_collectview:
                 ClickCollectBaby();
@@ -768,11 +761,10 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                     }
 
 
-                    if (data != null) {
-                        mPopTitle.setText(data.getTitle());
-                        mPopPrice.setText("￥" + data.getPrice());
 
-                    }
+                        mPopTitle.setText(share_title);
+                        mPopPrice.setText("￥" + curprice);
+
 
                     mPopDelete = (ImageView) popwindow.view.findViewById(R.id.delete_num);
                     mPopAdd = (ImageView) popwindow.view.findViewById(R.id.add_num);
@@ -815,10 +807,10 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                                     String num = mPopNum.getText().toString();
                                     String url = Constant.URL.EnterShopCaeUrl;
                                     HashMap<String, String> map = new HashMap<String, String>();
-                                    map.put("product_id", product_id);
+                                    map.put("product_id", fpro_id);
                                     map.put("number", num);//购买数量
                                     map.put("use_id", use_id);
-                                    map.put("user_id", userid);
+                                    map .put("user_id", userid);
                                     map.put("token", token);
                                     Log.e("use_id", use_id);
                                     HTTPUtils.post(NetredDetailActivity.this, url, map, new VolleyListener() {
@@ -1033,15 +1025,15 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
     }
 
     public SendMessageToWX.Req createReq(boolean timeLine, Bitmap thumb) {
-        String ArticleUrl = "http://m.ouyiku.com/?c=good&a=info&id=" + product_id;
-        String title2 = data.getTitle();
+//        String ArticleUrl = "http://m.ouyiku.com/?c=good&a=info&id=" + product_id;
+//        String title2 = data.getTitle();
 
         WXWebpageObject webpage = new WXWebpageObject();
-        webpage.webpageUrl = ArticleUrl;
+        webpage.webpageUrl = share_url;
         final WXMediaMessage msg = new WXMediaMessage(webpage);
 //		String title = title2;
 //		msg.description = title2;
-        msg.title = title2;
+        msg.title = share_title;
 //		Bitmap thumb = BitmapFactory.decodeResource(getResources(), R.drawable.tubiao3);
         //子线程执行获取分享要用的图片
 //		new Thread(new Runnable(){
@@ -1089,9 +1081,9 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
     public void share() {
         Bundle bundle = new Bundle();
         //这条分享消息被好友点击后的跳转URL。
-        bundle.putString(QQShare.SHARE_TO_QQ_TARGET_URL, "http://m.ouyiku.com/?c=good&a=info&id=" + product_id);
+        bundle.putString(QQShare.SHARE_TO_QQ_TARGET_URL, share_url);
         //分享的标题。注：PARAM_TITLE、PARAM_IMAGE_URL、PARAM_	SUMMARY不能全为空，最少必须有一个是有值的。
-        bundle.putString(QQShare.SHARE_TO_QQ_TITLE, data.getTitle());
+        bundle.putString(QQShare.SHARE_TO_QQ_TITLE, share_title);
         //分享的图片URL
         bundle.putString(QQShare.SHARE_TO_QQ_IMAGE_URL, mBannerData.get(0));
         //分享的消息摘要，最长50个字
@@ -1113,8 +1105,8 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
 //		 shareType = QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT;
 //
         params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE, shareType);
-        params.putString(QzoneShare.SHARE_TO_QQ_TITLE, data.getTitle());
-        params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL, "http://m.ouyiku.com/?c=good&a=info&id=" + product_id);
+        params.putString(QzoneShare.SHARE_TO_QQ_TITLE, share_title);
+        params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL, share_url);
         //分享的标题。注：PARAM_TITLE、PARAM_IMAGE_URL、PARAM_	SUMMARY不能全为空，最少必须有一个是有值的。
 //			bundle.putString(QzoneShare.SHARE_TO_QQ_TITLE, data.getTitle());
 //			//分享的图片URL

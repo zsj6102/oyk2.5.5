@@ -58,6 +58,8 @@ public class Constant {
 		
 		public static final String DetailNetredUrl=
 				"http://a.ouyiku.com/?c=huodong2&a=baokuandetail";//网红爆款
+		public static final String NetredShare = "http://a.ouyiku.com/?c=Share&a=appshare&type=8";//网红分享
+		public static final String NineShare = "http://a.ouyiku.com/?c=Share&a=appshare&type=7";//9.9分享
 		public static final String DetailGraphicURL=
 				"http://a.ouyiku.com/?c=Index&a=img_str&product_id=";
 		

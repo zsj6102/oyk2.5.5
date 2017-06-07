@@ -27,12 +27,8 @@ import zsj.com.oyk255.example.ouyiku.homejson.UpdataVerData;
 import zsj.com.oyk255.example.ouyiku.utils.Constant;
 import zsj.com.oyk255.suiyuchen.HTTPUtils;
 import zsj.com.oyk255.suiyuchen.VolleyListener;
-
 import com.google.gson.Gson;
-
 import com.umeng.message.PushAgent;
-import com.umeng.message.UmengRegistrar;
-
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.app.AlertDialog;
@@ -65,7 +61,7 @@ public class MainActivity extends FragmentActivity  {
 		mPushAgent.onAppStart();
 		
 		
-		initUpdata();
+//		initUpdata();
 		
 		
 		mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);

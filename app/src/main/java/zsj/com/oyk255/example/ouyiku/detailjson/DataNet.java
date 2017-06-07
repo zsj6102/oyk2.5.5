@@ -3,7 +3,11 @@ package zsj.com.oyk255.example.ouyiku.detailjson;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import zsj.com.oyk255.example.ouyiku.detailskujson.Datum;
+import zsj.com.oyk255.example.ouyiku.detailskujson.Stock;
 
 /**
  * Created by Administrator on 2017/6/6 0006.
@@ -34,6 +38,47 @@ public class DataNet {
     private String brandtitle;
     @Expose
     private String brand_id;
+    @Expose
+    private String share_url;
+    @Expose
+    private List<Datum> skudata = new ArrayList<Datum>();
+    @Expose
+    private List<Stock> attr = new ArrayList<Stock>();
+
+    public List<Datum> getSkudata() {
+        return skudata;
+    }
+
+    public void setSkudata(List<Datum> skudata) {
+        this.skudata = skudata;
+    }
+
+    public List<Stock> getAttr() {
+        return attr;
+    }
+
+    public void setAttr(List<Stock> attr) {
+        this.attr = attr;
+    }
+
+    public String getTitle() {
+
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Expose
+    private String title;
+    public String getShare_url() {
+        return share_url;
+    }
+
+    public void setShare_url(String share_url) {
+        this.share_url = share_url;
+    }
 
     public String getBrandtitle() {
         return brandtitle;

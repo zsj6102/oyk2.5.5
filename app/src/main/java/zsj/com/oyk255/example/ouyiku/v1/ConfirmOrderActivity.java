@@ -13,12 +13,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import zsj.com.oyk255.R;
 import zsj.com.oyk255.example.ouyiku.invitejson.ComfirmOrder;
@@ -309,6 +311,7 @@ public class ConfirmOrderActivity extends OykActivity implements OnClickListener
 		progressHUD.setMessage("加载中");
     	progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER );
     	progressHUD.show();
+
 		String LiuYan = liuyan.getText().toString().trim();
 		String Url=Constant.URL.SubmitOrderUrl;
 		HashMap<String, String> map=new HashMap<String, String>();
@@ -317,6 +320,10 @@ public class ConfirmOrderActivity extends OykActivity implements OnClickListener
 		map.put("address_id", addressId);
 		map.put("remark", LiuYan);
 		map.put("cart_id", cart_id);
+		if(TextUtils.isEmpty(addressId)){
+			Toast.makeText(this,"请选择收货地址",Toast.LENGTH_SHORT).show();
+			return;
+		}
 		HTTPUtils.post(this, Url, map, new VolleyListener() {
 			
 			@Override

@@ -8,14 +8,27 @@ import com.android.volley.VolleyError;
 
 import com.google.gson.Gson;
 
+import com.tencent.connect.share.QQShare;
+import com.tencent.connect.share.QzoneShare;
+import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.open.utils.ThreadManager;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
 import com.umeng.message.PushAgent;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -30,11 +43,15 @@ import zsj.com.oyk255.R;
 import zsj.com.oyk255.example.ouyiku.brandjson.Nine0Nine;
 import zsj.com.oyk255.example.ouyiku.brandjson.Nine0NineDatum;
 import zsj.com.oyk255.example.ouyiku.brandjson.Status;
+import zsj.com.oyk255.example.ouyiku.detail.popwindow.Share_pop;
+import zsj.com.oyk255.example.ouyiku.detailjson.DataNetshare;
+import zsj.com.oyk255.example.ouyiku.detailjson.NetShare;
 import zsj.com.oyk255.example.ouyiku.detailjson.NineBanner;
 import zsj.com.oyk255.example.ouyiku.detailjson.NineBannerDatum;
 import zsj.com.oyk255.example.ouyiku.pullableview.PullToRefreshLayout;
 import zsj.com.oyk255.example.ouyiku.pullableview.PullableScrollView;
 import zsj.com.oyk255.example.ouyiku.utils.Constant;
+import zsj.com.oyk255.example.ouyiku.utils.PhotoUtil;
 import zsj.com.oyk255.example.ouyiku.view.AspectRatioImageView;
 import zsj.com.oyk255.example.ouyiku.view.MyGridView;
 import zsj.com.oyk255.example.ouyiku.view.ZProgressHUD;
@@ -49,7 +66,15 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 	private PullableScrollView mScroll;
 	ArrayList<NineBannerDatum> mBannerData=new ArrayList<NineBannerDatum>();
 	ArrayList<Nine0NineDatum> mListData=new ArrayList<Nine0NineDatum>();
-
+	private Share_pop share_pop;
+	private Tencent mTencent;
+	private IWXAPI api;
+	private static final String APP_ID = Constant.APPID.WXAPPID;
+	private static final String APP_QQID = Constant.APPID.QQAPPID;
+	private String sharePicUrl;
+	private String share_url;
+	private String share_title;
+	private String content;
 	//1元包邮
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +83,48 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 		PushAgent.getInstance(this).onAppStart();
 		((PullToRefreshLayout) findViewById(R.id.refresh_view1))
 		.setOnRefreshListener(new MyListener());
+		api = WXAPIFactory.createWXAPI(this, APP_ID, false);
+		api.registerApp(APP_ID);
+
+		mTencent = Tencent.createInstance(APP_QQID, this.getApplicationContext());
 		initUI();
 		initList();
+		initShare();
 		initBanner();
 	}
+	private void initShare(){
+		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this);
+		progressHUD.setMessage("加载中");
+		progressHUD.setSpinnerType(ZProgressHUD.SIMPLE_ROUND_SPINNER);
+		progressHUD.show();
+		String netshareUrl = Constant.URL.NineShare;
+		HTTPUtils.get(this, netshareUrl, new VolleyListener() {
 
+			@Override
+			public void onResponse(String arg0) {
+				progressHUD.dismiss();
+				Gson gson = new Gson();
+				DataNetshare fromJson = gson.fromJson(arg0, DataNetshare.class);
+				NetShare data = fromJson.getNetShare();
+				zsj.com.oyk255.example.ouyiku.detailjson.Status status = fromJson.getStatus();
+				String succeed = status.getSucceed();
+				if (succeed.equals("1")) {
+
+					sharePicUrl = data.getShare_img();
+					share_url=data.getShare_url();
+					share_title=data.getShare_title();
+					content =data.getContent();
+//                    String url = data.getShare_url();
+
+				}
+			}
+
+			@Override
+			public void onErrorResponse(VolleyError arg0) {
+				progressHUD.dismiss();
+			}
+		});
+	}
 	private void initBanner() {
 		final ZProgressHUD progressHUD = ZProgressHUD.getInstance(this);
     	progressHUD.setMessage("加载中");
@@ -148,6 +210,7 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 	private void initUI() {
 		mScroll = (PullableScrollView) findViewById(R.id.nine_scrollView);
 		mScroll.smoothScrollTo(0, 0);
+		findViewById(R.id.share_text).setOnClickListener(this);
 		findViewById(R.id.nine_back).setOnClickListener(this);
 		mGridview = (MyGridView) findViewById(R.id.nine_gridview);
 		mTopView = (ImageView) findViewById(R.id.nine_img);
@@ -172,6 +235,7 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 
 			}
 		});
+		share_pop = new Share_pop(this);
 	}
 
 	@Override
@@ -180,12 +244,187 @@ public class PhoneChongzhiActivity extends OykActivity implements OnClickListene
 		case R.id.nine_back:
 			finish();
 			break;
+			case R.id.share_text:
+			share_pop.showAtLocation(findViewById(R.id.LinearLayout2), Gravity.CENTER, 0, 0);
+			share_pop.view.findViewById(R.id.iv_share_wx3).setOnClickListener(new OnClickListener() {
 
+				@Override
+				public void onClick(View v) {
+
+					new Thread(new Runnable() {
+
+						@Override
+						public void run() {
+
+							Bitmap thumb = Bitmap.createScaledBitmap(PhotoUtil.GetLocalOrNetBitmap(sharePicUrl), 120, 120, true);
+							api.registerApp(APP_ID);
+							api.sendReq(createReq(false, thumb));
+
+
+
+						}
+					}).start();
+
+
+				}
+			});
+
+			share_pop.view.findViewById(R.id.iv_share_pyq3).setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					new Thread(new Runnable() {
+
+						@Override
+						public void run() {
+
+							Bitmap thumb = Bitmap.createScaledBitmap(PhotoUtil.GetLocalOrNetBitmap( sharePicUrl), 120, 120, true);
+							api.registerApp(APP_ID);
+							api.sendReq(createReq(false, thumb));
+
+						}
+					}).start();
+
+
+				}
+			});
+			share_pop.view.findViewById(R.id.iv_share_qq).setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					share();
+
+				}
+			});
+
+			share_pop.view.findViewById(R.id.iv_share_qqzong).setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					ShareQQZone();
+
+				}
+			});
+			break;
 		default:
 			break;
 		}
 
 	}
+	public SendMessageToWX.Req createReq(boolean timeLine, Bitmap thumb) {
+//        String ArticleUrl = "http://m.ouyiku.com/?c=good&a=info&id=" + product_id;
+//        String title2 = data.getTitle();
+
+		WXWebpageObject webpage = new WXWebpageObject();
+
+		webpage.webpageUrl = share_url;
+		final WXMediaMessage msg = new WXMediaMessage(webpage);
+//		String title = title2;
+//		msg.description = title2;
+		msg.title = share_title;
+		msg.description = content;
+//		Bitmap thumb = BitmapFactory.decodeResource(getResources(), R.drawable.tubiao3);
+		//子线程执行获取分享要用的图片
+//		new Thread(new Runnable(){
+//
+//			@Override
+//            public void run() {
+//            	thumb = Bitmap.createScaledBitmap(PhotoUtil.GetLocalOrNetBitmap(sharePicUrl), 120, 120, true);
+		msg.thumbData = PhotoUtil.bmpToByteArray(thumb, true);
+//            }
+//        }).start();
+
+		SendMessageToWX.Req req = new SendMessageToWX.Req();
+		req.transaction = buildTransaction("webpage");
+		req.message = msg;
+//		req.scene = SendMessageToWX.Req.WXSceneSession;
+		req.scene = timeLine ? SendMessageToWX.Req.WXSceneTimeline : SendMessageToWX.Req.WXSceneSession;
+		return req;
+	}
+	private String buildTransaction(final String type) {
+		return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
+	}
+	//分享QQ
+	public void share() {
+		Bundle bundle = new Bundle();
+		//这条分享消息被好友点击后的跳转URL。
+		bundle.putString(QQShare.SHARE_TO_QQ_TARGET_URL, share_url);
+		//分享的标题。注：PARAM_TITLE、PARAM_IMAGE_URL、PARAM_	SUMMARY不能全为空，最少必须有一个是有值的。
+		bundle.putString(QQShare.SHARE_TO_QQ_TITLE,  share_title);
+		//分享的图片URL
+		bundle.putString(QQShare.SHARE_TO_QQ_IMAGE_URL, sharePicUrl);
+		//分享的消息摘要，最长50个字
+//	bundle.putString(QQShare.SHARE_TO_QQ_SUMMARY, "测试");
+		//手Q客户端顶部，替换“返回”按钮文字，如果为空，用返回代替
+//	bundle.putString(Constants.PARAM_APPNAME, "??我在测试");
+		//标识该消息的来源应用，值为应用名称+AppId。
+//	bundle.putString(Constants.PARAM_APP_SOURCE, "星期几" + AppId);
+
+		mTencent.shareToQQ(this, bundle, qqShareListener);
+	}
+
+	//	 private int shareType = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;
+	private int shareType = QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT;
+
+	//分享QQ空间
+	public void ShareQQZone() {
+		Bundle params = new Bundle();
+//		 shareType = QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT;
+//
+		params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE, shareType);
+		params.putString(QzoneShare.SHARE_TO_QQ_TITLE,  share_title);
+		params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL,  share_url);
+		//分享的标题。注：PARAM_TITLE、PARAM_IMAGE_URL、PARAM_	SUMMARY不能全为空，最少必须有一个是有值的。
+//			bundle.putString(QzoneShare.SHARE_TO_QQ_TITLE, data.getTitle());
+//			//分享的图片URL
+
+//        params.putStringArrayList(QzoneShare.SHARE_TO_QQ_IMAGE_URL, content);
+		doShareToQzone(params);
+
+	}
+
+	IUiListener qqShareListener = new IUiListener() {
+		@Override
+		public void onCancel() {
+//            if (shareType != QQShare.SHARE_TO_QQ_TYPE_IMAGE) {
+//                Util.toastMessage(DetailActivity.this, "onCancel: ");
+//                Toast.makeText(DetailActivity.this, "onCancel:", Toast.LENGTH_SHORT).show();
+//            }
+		}
+
+		@Override
+		public void onComplete(Object response) {
+			// TODO Auto-generated method stub
+//            Util.toastMessage(DetailActivity.this, "onComplete: " + response.toString());
+//            Toast.makeText(DetailActivity.this, "onComplete: " + response.toString(), Toast.LENGTH_SHORT).show();
+		}
+
+		@Override
+		public void onError(UiError e) {
+			// TODO Auto-generated method stub
+//            Util.toastMessage(DetailActivity.this, "onError: " + e.errorMessage, "e");
+//            Toast.makeText(DetailActivity.this, "onError: " + e.errorMessage, Toast.LENGTH_SHORT).show();
+		}
+	};
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		Tencent.onActivityResultData(requestCode, resultCode, data, qqShareListener);
+	}
+
+	private void doShareToQzone(final Bundle params) {
+		// QZone分享要在主线程做
+		ThreadManager.getMainHandler().post(new Runnable() {
+
+			@Override
+			public void run() {
+				if (null != mTencent) {
+					mTencent.shareToQzone(PhoneChongzhiActivity.this, params, qqShareListener);
+				}
+			}
+		});
+	}
+
 	class NineAdapter extends BaseAdapter{
 
 		@Override
