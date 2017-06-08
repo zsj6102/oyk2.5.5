@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="zsj.com.oyk255">
+    package="zsj.com.oyk255"
+    >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -29,13 +30,24 @@
     <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-
+    <uses-permission android:name="android.permission.DELETE_PACKAGES" />
     <application
         android:name="zsj.com.oyk255.example.ouyiku.app.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/tubiao"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <!--7.0apk安装-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.zsj.oyk255"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <!--元数据-->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5678b46767e58e0545006666" >

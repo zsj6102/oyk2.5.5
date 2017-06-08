@@ -139,8 +139,9 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
     private static final String APP_QQID = Constant.APPID.QQAPPID;
     private String share_url;
     private String share_title;
-    private  String curprice;
+    private String curprice;
     private String marketPrice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -627,13 +628,8 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                         mListView.setAdapter(new MYLIST(list, list2, list3));
                     }
 
-
-                    if (data != null) {
-                        mPopTitle.setText(data.getTitle());
-                        mPopPrice.setText("￥" + data.getPrice());
-
-                    }
-
+                    mPopTitle.setText(share_title);
+                    mPopPrice.setText("￥" + curprice);
                     mPopDelete = (ImageView) popwindow.view.findViewById(R.id.delete_num);
                     mPopAdd = (ImageView) popwindow.view.findViewById(R.id.add_num);
                     mPopNum = (TextView) popwindow.view.findViewById(R.id.num);
@@ -761,9 +757,8 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                     }
 
 
-
-                        mPopTitle.setText(share_title);
-                        mPopPrice.setText("￥" + curprice);
+                    mPopTitle.setText(share_title);
+                    mPopPrice.setText("￥" + curprice);
 
 
                     mPopDelete = (ImageView) popwindow.view.findViewById(R.id.delete_num);
@@ -810,7 +805,7 @@ public class NetredDetailActivity extends FragmentActivity implements OnClickLis
                                     map.put("product_id", fpro_id);
                                     map.put("number", num);//购买数量
                                     map.put("use_id", use_id);
-                                    map .put("user_id", userid);
+                                    map.put("user_id", userid);
                                     map.put("token", token);
                                     Log.e("use_id", use_id);
                                     HTTPUtils.post(NetredDetailActivity.this, url, map, new VolleyListener() {
